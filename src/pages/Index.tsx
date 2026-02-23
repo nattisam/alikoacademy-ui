@@ -4,6 +4,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import LearnerJourney from "@/components/LearnerJourney";
 import TrustStrip from "@/components/TrustStrip";
+import CategoryCarousel from "@/components/CategoryCarousel";
 import heroImage from "@/assets/hero-home.jpg";
 import pathwayHealth from "@/assets/pathway-health.jpg";
 import pathwayStem from "@/assets/pathway-stem.jpg";
@@ -97,6 +98,9 @@ const Index = () => {
           </div>
         </div>
       </section>
+
+      {/* Category Cards Carousel */}
+      <CategoryCarousel />
 
       {/* Trust Strip */}
       <TrustStrip />
