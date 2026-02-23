@@ -180,10 +180,10 @@ const Index = () => {
         <div className="section-container">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-heading font-bold text-foreground">
-              AlikoHub Ventures
+              AlikoHub Ventures & Partners
             </h2>
             <p className="mt-4 text-muted-foreground max-w-2xl mx-auto">
-              Explore our ecosystem of platforms building Africa's digital future.
+              The creators of the ecosystem and the engine behind Africa's employment pipeline.
             </p>
           </div>
 
