@@ -1,4 +1,4 @@
-import { ExternalLink, ArrowRight, ArrowLeft } from "lucide-react";
+import { ExternalLink } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import {
   Carousel,
@@ -7,31 +7,31 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel";
-import pathwayHealth from "@/assets/pathway-health.jpg";
-import pathwayStem from "@/assets/pathway-stem.jpg";
-import pathwayInnovation from "@/assets/pathway-innovation.jpg";
+import logoStem from "@/assets/logo-stem.png";
+import logoTech from "@/assets/logo-tech.png";
+import logoHealth from "@/assets/logo-health.png";
 
 const categories = [
   {
     title: "STEM",
     description: "Explore Science, Technology, Engineering, and Mathematics fundamentals.",
     courses: "2 Courses",
-    image: pathwayStem,
-    url: "https://alikohub.com",
+    logo: logoStem,
+    url: "https://aliko-academy-stem.lovable.app/",
   },
   {
     title: "Technology",
     description: "Master modern technology skills, from programming to system design.",
     courses: "2 Courses",
-    image: pathwayInnovation,
-    url: "https://alikohub.com",
+    logo: logoTech,
+    url: "https://aliko-academy-tech.lovable.app/",
   },
   {
     title: "Health",
     description: "Advance your career in healthcare with our comprehensive medical courses.",
     courses: "2 Courses",
-    image: pathwayHealth,
-    url: "https://alikohub.com",
+    logo: logoHealth,
+    url: "https://aliko-academy-health.lovable.app/",
   },
 ];
 
@@ -47,11 +47,11 @@ const CategoryCarousel = () => {
             {categories.map((cat) => (
               <CarouselItem key={cat.title} className="pl-4 md:basis-1/3 basis-4/5">
                 <div className="bg-card rounded-xl border overflow-hidden hover:shadow-lg transition-shadow h-full flex flex-col">
-                  <div className="h-40 overflow-hidden bg-muted">
+                  <div className="h-40 overflow-hidden bg-white flex items-center justify-center p-4">
                     <img
-                      src={cat.image}
+                      src={cat.logo}
                       alt={cat.title}
-                      className="w-full h-full object-cover"
+                      className="max-h-full max-w-full object-contain"
                     />
                   </div>
                   <div className="p-5 flex flex-col flex-1">

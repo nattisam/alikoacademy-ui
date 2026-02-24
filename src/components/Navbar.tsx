@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import logoAcademy from "@/assets/logo-aliko-academy.png";
 
 const navLinks = [
   { label: "Home", to: "/" },
@@ -17,13 +18,8 @@ const Navbar = () => {
     <nav className="sticky top-0 z-50 bg-card/90 backdrop-blur-md border-b">
       <div className="section-container flex items-center justify-between h-16 md:h-20">
         {/* Logo */}
-        <Link to="/" className="flex items-center gap-2">
-          <div className="w-8 h-8 rounded-full bg-primary flex items-center justify-center">
-            <span className="text-primary-foreground font-heading font-bold text-sm">A</span>
-          </div>
-          <span className="font-heading font-bold text-lg text-foreground">
-            Aliko<span className="text-accent">Hub</span> Academy
-          </span>
+        <Link to="/" className="flex items-center">
+          <img src={logoAcademy} alt="Aliko Academy" className="h-10 md:h-12 w-auto" />
         </Link>
 
         {/* Desktop nav */}
