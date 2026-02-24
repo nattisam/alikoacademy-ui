@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Menu, X, Bell, User, LogOut, ChevronDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import logoAcademy from "@/assets/logo-aliko-academy.png";
+import logoLms from "@/assets/logo-lms.png";
 
 const lmsLinks: { label: string; to: string; external?: boolean }[] = [
   { label: "Explore", to: "/lms/explore" },
@@ -20,7 +20,7 @@ const LmsNavbar = () => {
     <nav className="sticky top-0 z-50 bg-card/95 backdrop-blur-md border-b">
       <div className="section-container flex items-center justify-between h-16 md:h-20">
         <Link to="/lms" className="flex items-center">
-          <img src={logoAcademy} alt="Aliko Academy" className="h-10 md:h-12 w-auto" />
+          <img src={logoLms} alt="Aliko Academy LMS" className="h-14 md:h-20 w-auto" />
         </Link>
 
         <div className="hidden md:flex items-center gap-8">
