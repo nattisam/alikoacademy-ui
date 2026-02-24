@@ -37,7 +37,7 @@ const Navbar = () => {
         </div>
 
         <div className="hidden md:flex items-center gap-3">
-          <Button variant="ghost" size="sm" className="text-muted-foreground hover:text-primary">
+          <Button variant="ghost" size="sm" className="text-muted-foreground hover:text-primary hover:bg-primary/10">
             Login
           </Button>
           <Button size="sm" asChild>
@@ -63,7 +63,7 @@ const Navbar = () => {
             </Link>
           ))}
           <div className="flex gap-2 pt-2">
-            <Button variant="ghost" size="sm" className="flex-1 text-muted-foreground hover:text-primary">
+            <Button variant="ghost" size="sm" className="flex-1 text-muted-foreground hover:text-primary hover:bg-primary/10">
               Login
             </Button>
             <Button size="sm" className="flex-1" asChild>
