@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Menu, X, Bell, User, LogOut, ChevronDown, Shield, CreditCard, BellRing, Settings, Camera } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -15,6 +15,17 @@ const LmsNavbar = () => {
   const [open, setOpen] = useState(false);
   const [profileOpen, setProfileOpen] = useState(false);
   const location = useLocation();
+  const profileRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const handleClickOutside = (e: MouseEvent) => {
+      if (profileRef.current && !profileRef.current.contains(e.target as Node)) {
+        setProfileOpen(false);
+      }
+    };
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, []);
 
   return (
     <nav className="sticky top-0 z-50 bg-card/95 backdrop-blur-md border-b">
@@ -55,7 +66,7 @@ const LmsNavbar = () => {
             <span className="absolute top-1 right-1 w-2 h-2 bg-accent rounded-full" />
           </button>
 
-          <div className="relative">
+          <div className="relative" ref={profileRef}>
             <button
               onClick={() => setProfileOpen(!profileOpen)}
               className="flex items-center gap-2 px-3 py-2 rounded-lg hover:bg-muted transition-colors"
