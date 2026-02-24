@@ -10,6 +10,7 @@ const navLinks = [
   { label: "Contact", to: "/contact" },
 ];
 
+
 const Navbar = () => {
   const [open, setOpen] = useState(false);
   const location = useLocation();
@@ -39,7 +40,9 @@ const Navbar = () => {
 
         <div className="hidden md:flex items-center gap-3">
           <Button variant="ghost" size="sm">Login</Button>
-          <Button size="sm">Sign Up</Button>
+          <Button size="sm" asChild>
+            <Link to="/lms">Access LMS</Link>
+          </Button>
         </div>
 
         {/* Mobile toggle */}
@@ -63,7 +66,9 @@ const Navbar = () => {
           ))}
           <div className="flex gap-2 pt-2">
             <Button variant="ghost" size="sm" className="flex-1">Login</Button>
-            <Button size="sm" className="flex-1">Sign Up</Button>
+            <Button size="sm" className="flex-1" asChild>
+              <Link to="/lms">Access LMS</Link>
+            </Button>
           </div>
         </div>
       )}
