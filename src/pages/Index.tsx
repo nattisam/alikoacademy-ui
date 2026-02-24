@@ -66,9 +66,6 @@ const Index = () => {
         <div className="section-container py-16 md:py-24 lg:py-32">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div className="animate-fade-in-up">
-              <span className="inline-block px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-semibold tracking-wide uppercase mb-6">
-                AlikoHub Academy
-              </span>
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-heading font-bold leading-tight text-foreground">
                 Build <span className="text-gradient">In-Demand Skills</span> for Real Opportunities
               </h1>
