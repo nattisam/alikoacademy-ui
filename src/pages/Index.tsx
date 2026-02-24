@@ -129,6 +129,62 @@ const Index = () => {
         </div>
       </section>
 
+      {/* Academy Enterprise */}
+      <section className="section-padding section-alt">
+        <div className="section-container">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <div>
+              <span className="inline-block px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-semibold tracking-wide uppercase mb-4">
+                Academy Enterprise
+              </span>
+              <h2 className="text-3xl md:text-4xl font-heading font-bold text-foreground mb-4">
+                Enterprise Solutions
+              </h2>
+              <h3 className="text-xl font-heading font-semibold text-primary mb-4">
+                Training for Organizations
+              </h3>
+              <p className="text-muted-foreground leading-relaxed text-lg mb-6">
+                Upskill your workforce with customized training programs designed for enterprises, universities, and government organizations.
+              </p>
+              <div className="space-y-3">
+                {[
+                  "Custom curriculum aligned to your industry needs",
+                  "Dedicated learning management & reporting dashboards",
+                  "Scalable cohort-based or self-paced delivery",
+                  "Certification & compliance tracking",
+                ].map((point) => (
+                  <div key={point} className="flex items-start gap-3">
+                    <div className="w-2 h-2 rounded-full bg-primary mt-2 shrink-0" />
+                    <p className="text-muted-foreground">{point}</p>
+                  </div>
+                ))}
+              </div>
+              <div className="mt-8">
+                <Button size="lg" className="gap-2">
+                  Request a Demo <ArrowRight className="w-4 h-4" />
+                </Button>
+              </div>
+            </div>
+            <div className="grid grid-cols-2 gap-4">
+              {[
+                { icon: Shield, title: "Enterprise Training", desc: "Tailored programs for teams of any size" },
+                { icon: Monitor, title: "University Partnerships", desc: "Accredited pathways for institutions" },
+                { icon: Briefcase, title: "Government Programs", desc: "Workforce development at national scale" },
+                { icon: Heart, title: "Impact Reporting", desc: "Measurable outcomes & ROI tracking" },
+              ].map((card) => (
+                <div key={card.title} className="bg-card rounded-xl border p-5 hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
+                  <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center mb-3">
+                    <card.icon className="w-5 h-5 text-primary" />
+                  </div>
+                  <h4 className="font-heading font-semibold text-sm text-foreground mb-1">{card.title}</h4>
+                  <p className="text-xs text-muted-foreground leading-relaxed">{card.desc}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* CTA */}
       <section className="section-padding">
         <div className="section-container text-center">
