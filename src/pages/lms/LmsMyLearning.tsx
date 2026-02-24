@@ -4,22 +4,30 @@ import { Button } from "@/components/ui/button";
 import { Progress } from "@/components/ui/progress";
 import LmsNavbar from "@/components/LmsNavbar";
 
+import thumbCloud from "@/assets/thumb-cloud.jpg";
+import thumbHealthAnalytics from "@/assets/thumb-health-analytics.jpg";
+import thumbAutocad from "@/assets/thumb-autocad.jpg";
+import thumbCpr from "@/assets/thumb-cpr.jpg";
+import thumbPython from "@/assets/thumb-python.jpg";
+import thumbAiMl from "@/assets/thumb-ai-ml.jpg";
+import thumbBim from "@/assets/thumb-bim.jpg";
+
 const tabs = ["In Progress", "Completed", "Saved"];
 
 const inProgress = [
-  { title: "Introduction to Cloud Computing", stream: "Tech", progress: 68, timeLeft: "3 weeks", streamClass: "stream-tech" },
-  { title: "Health Data Analytics Foundations", stream: "Health", progress: 34, timeLeft: "7 weeks", streamClass: "stream-health" },
-  { title: "AutoCAD for Civil Engineering", stream: "STEM", progress: 85, timeLeft: "1 week", streamClass: "stream-stem" },
+  { title: "Introduction to Cloud Computing", stream: "Tech", progress: 68, timeLeft: "3 weeks", streamClass: "stream-tech", thumb: thumbCloud },
+  { title: "Health Data Analytics Foundations", stream: "Health", progress: 34, timeLeft: "7 weeks", streamClass: "stream-health", thumb: thumbHealthAnalytics },
+  { title: "AutoCAD for Civil Engineering", stream: "STEM", progress: 85, timeLeft: "1 week", streamClass: "stream-stem", thumb: thumbAutocad },
 ];
 
 const completed = [
-  { title: "CPR/BLS Certification", stream: "Health", completedDate: "Jan 15, 2026", certified: true, streamClass: "stream-health" },
-  { title: "Python Fundamentals", stream: "Tech", completedDate: "Dec 10, 2025", certified: true, streamClass: "stream-tech" },
+  { title: "CPR/BLS Certification", stream: "Health", completedDate: "Jan 15, 2026", certified: true, streamClass: "stream-health", thumb: thumbCpr },
+  { title: "Python Fundamentals", stream: "Tech", completedDate: "Dec 10, 2025", certified: true, streamClass: "stream-tech", thumb: thumbPython },
 ];
 
 const saved = [
-  { title: "AI and Machine Learning", stream: "Tech", duration: "14 weeks", level: "Advanced", streamClass: "stream-tech" },
-  { title: "BIM Systems and Design", stream: "STEM", duration: "10 weeks", level: "Intermediate", streamClass: "stream-stem" },
+  { title: "AI and Machine Learning", stream: "Tech", duration: "14 weeks", level: "Advanced", streamClass: "stream-tech", thumb: thumbAiMl },
+  { title: "BIM Systems and Design", stream: "STEM", duration: "10 weeks", level: "Intermediate", streamClass: "stream-stem", thumb: thumbBim },
 ];
 
 const LmsMyLearning = () => {
@@ -51,8 +59,11 @@ const LmsMyLearning = () => {
         {activeTab === "In Progress" && (
           <div className="space-y-4">
             {inProgress.map((course) => (
-              <div key={course.title} className="bg-card rounded-lg border p-5 hover:shadow-md transition-shadow duration-200">
-                <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+              <div key={course.title} className="bg-card rounded-lg border overflow-hidden hover:shadow-md transition-shadow duration-200 flex">
+                <div className="w-32 md:w-48 shrink-0">
+                  <img src={course.thumb} alt={course.title} className="w-full h-full object-cover" />
+                </div>
+                <div className="p-5 flex-1 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
                   <div className="flex-1">
                     <span className={`text-xs font-medium px-2.5 py-1 rounded-full ${course.streamClass}`}>{course.stream}</span>
                     <h3 className="font-heading font-semibold text-foreground mt-2">{course.title}</h3>
@@ -77,8 +88,11 @@ const LmsMyLearning = () => {
         {activeTab === "Completed" && (
           <div className="space-y-4">
             {completed.map((course) => (
-              <div key={course.title} className="bg-card rounded-lg border p-5">
-                <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+              <div key={course.title} className="bg-card rounded-lg border overflow-hidden flex">
+                <div className="w-32 md:w-48 shrink-0">
+                  <img src={course.thumb} alt={course.title} className="w-full h-full object-cover" />
+                </div>
+                <div className="p-5 flex-1 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
                   <div>
                     <span className={`text-xs font-medium px-2.5 py-1 rounded-full ${course.streamClass}`}>{course.stream}</span>
                     <h3 className="font-heading font-semibold text-foreground mt-2">{course.title}</h3>
@@ -99,8 +113,11 @@ const LmsMyLearning = () => {
         {activeTab === "Saved" && (
           <div className="space-y-4">
             {saved.map((course) => (
-              <div key={course.title} className="bg-card rounded-lg border p-5">
-                <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+              <div key={course.title} className="bg-card rounded-lg border overflow-hidden flex">
+                <div className="w-32 md:w-48 shrink-0">
+                  <img src={course.thumb} alt={course.title} className="w-full h-full object-cover" />
+                </div>
+                <div className="p-5 flex-1 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
                   <div>
                     <span className={`text-xs font-medium px-2.5 py-1 rounded-full ${course.streamClass}`}>{course.stream}</span>
                     <h3 className="font-heading font-semibold text-foreground mt-2">{course.title}</h3>

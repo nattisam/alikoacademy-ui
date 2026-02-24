@@ -3,19 +3,29 @@ import { Search, Clock, BarChart, Star } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import LmsNavbar from "@/components/LmsNavbar";
 
+import thumbCna from "@/assets/thumb-cna.jpg";
+import thumbMedicalCoding from "@/assets/thumb-medical-coding.jpg";
+import thumbHealthAnalytics from "@/assets/thumb-health-analytics.jpg";
+import thumbFullstack from "@/assets/thumb-fullstack.jpg";
+import thumbCloud from "@/assets/thumb-cloud.jpg";
+import thumbAiMl from "@/assets/thumb-ai-ml.jpg";
+import thumbAutocad from "@/assets/thumb-autocad.jpg";
+import thumbBim from "@/assets/thumb-bim.jpg";
+import thumbElectrical from "@/assets/thumb-electrical.jpg";
+
 const streams = ["All", "Health", "Tech", "STEM"];
 const levels = ["All Levels", "Beginner", "Intermediate", "Advanced"];
 
 const courses = [
-  { title: "CNA Certification Prep", stream: "Health", level: "Beginner", duration: "8 weeks", rating: 4.7, streamClass: "stream-health" },
-  { title: "Medical Coding Fundamentals", stream: "Health", level: "Intermediate", duration: "10 weeks", rating: 4.5, streamClass: "stream-health" },
-  { title: "Health Data Analytics", stream: "Health", level: "Advanced", duration: "12 weeks", rating: 4.8, streamClass: "stream-health" },
-  { title: "Full-Stack Web Development", stream: "Tech", level: "Intermediate", duration: "16 weeks", rating: 4.9, streamClass: "stream-tech" },
-  { title: "Introduction to Cloud Computing", stream: "Tech", level: "Beginner", duration: "6 weeks", rating: 4.6, streamClass: "stream-tech" },
-  { title: "AI and Machine Learning", stream: "Tech", level: "Advanced", duration: "14 weeks", rating: 4.8, streamClass: "stream-tech" },
-  { title: "AutoCAD for Civil Engineering", stream: "STEM", level: "Beginner", duration: "8 weeks", rating: 4.4, streamClass: "stream-stem" },
-  { title: "BIM Systems and Design", stream: "STEM", level: "Intermediate", duration: "10 weeks", rating: 4.5, streamClass: "stream-stem" },
-  { title: "Electrical Systems Modeling", stream: "STEM", level: "Advanced", duration: "12 weeks", rating: 4.3, streamClass: "stream-stem" },
+  { title: "CNA Certification Prep", stream: "Health", level: "Beginner", duration: "8 weeks", rating: 4.7, streamClass: "stream-health", thumb: thumbCna },
+  { title: "Medical Coding Fundamentals", stream: "Health", level: "Intermediate", duration: "10 weeks", rating: 4.5, streamClass: "stream-health", thumb: thumbMedicalCoding },
+  { title: "Health Data Analytics", stream: "Health", level: "Advanced", duration: "12 weeks", rating: 4.8, streamClass: "stream-health", thumb: thumbHealthAnalytics },
+  { title: "Full-Stack Web Development", stream: "Tech", level: "Intermediate", duration: "16 weeks", rating: 4.9, streamClass: "stream-tech", thumb: thumbFullstack },
+  { title: "Introduction to Cloud Computing", stream: "Tech", level: "Beginner", duration: "6 weeks", rating: 4.6, streamClass: "stream-tech", thumb: thumbCloud },
+  { title: "AI and Machine Learning", stream: "Tech", level: "Advanced", duration: "14 weeks", rating: 4.8, streamClass: "stream-tech", thumb: thumbAiMl },
+  { title: "AutoCAD for Civil Engineering", stream: "STEM", level: "Beginner", duration: "8 weeks", rating: 4.4, streamClass: "stream-stem", thumb: thumbAutocad },
+  { title: "BIM Systems and Design", stream: "STEM", level: "Intermediate", duration: "10 weeks", rating: 4.5, streamClass: "stream-stem", thumb: thumbBim },
+  { title: "Electrical Systems Modeling", stream: "STEM", level: "Advanced", duration: "12 weeks", rating: 4.3, streamClass: "stream-stem", thumb: thumbElectrical },
 ];
 
 const LmsExplore = () => {
@@ -93,12 +103,13 @@ const LmsExplore = () => {
               key={course.title}
               className="bg-card rounded-lg border overflow-hidden hover:shadow-md transition-shadow duration-200"
             >
-              <div className={`h-32 flex items-center justify-center ${
-                course.stream === "Health" ? "bg-gradient-to-br from-rose-50 to-red-100/60" :
-                course.stream === "Tech" ? "bg-gradient-to-br from-blue-50 to-blue-100/60" :
-                "bg-gradient-to-br from-emerald-50 to-green-100/60"
-              }`}>
-                <span className={`text-xs font-medium px-3 py-1 rounded-full ${course.streamClass}`}>
+              <div className="h-40 overflow-hidden relative">
+                <img
+                  src={course.thumb}
+                  alt={course.title}
+                  className="w-full h-full object-cover"
+                />
+                <span className={`absolute top-3 left-3 text-xs font-medium px-3 py-1 rounded-full ${course.streamClass}`}>
                   {course.stream}
                 </span>
               </div>
