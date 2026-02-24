@@ -1,10 +1,11 @@
-import { GraduationCap, Users, Briefcase, Heart } from "lucide-react";
+import { GraduationCap, Users, Briefcase, Heart, FlaskConical } from "lucide-react";
 
 const items = [
   { icon: GraduationCap, label: "Hybrid Learning" },
+  { icon: FlaskConical, label: "Applied Labs" },
   { icon: Users, label: "Mentorship" },
   { icon: Briefcase, label: "Career Support" },
-  { icon: Heart, label: "Employer Alignment" },
+  { icon: Heart, label: "Employer-Aligned Curriculum" },
 ];
 
 const TrustStrip = () => (

@@ -1,5 +1,4 @@
 import { ExternalLink } from "lucide-react";
-import { Button } from "@/components/ui/button";
 import {
   Carousel,
   CarouselContent,
@@ -13,25 +12,28 @@ import logoHealth from "@/assets/logo-health.png";
 
 const categories = [
   {
-    title: "STEM",
-    description: "Explore Science, Technology, Engineering, and Mathematics fundamentals.",
-    courses: "2 Courses",
-    logo: logoStem,
-    url: "https://aliko-academy-stem.lovable.app/",
-  },
-  {
-    title: "Technology",
-    description: "Master modern technology skills, from programming to system design.",
-    courses: "2 Courses",
-    logo: logoTech,
-    url: "https://aliko-academy-tech.lovable.app/",
-  },
-  {
-    title: "Health",
-    description: "Advance your career in healthcare with our comprehensive medical courses.",
+    title: "Digital Health & One Health",
+    description: "Prepare for roles in health data analytics, digital epidemiology, public health systems, and climate-linked health resilience.",
     courses: "2 Courses",
     logo: logoHealth,
     url: "https://aliko-academy-health.lovable.app/",
+    accent: "from-primary/10 to-primary/5",
+  },
+  {
+    title: "STEM & Engineering",
+    description: "Develop practical competencies in engineering tools, infrastructure systems, modeling, GIS, and sustainable technologies.",
+    courses: "2 Courses",
+    logo: logoStem,
+    url: "https://aliko-academy-stem.lovable.app/",
+    accent: "from-green-50 to-green-50/50",
+  },
+  {
+    title: "Innovation & Entrepreneurship",
+    description: "Transform ideas into ventures through structured startup support, financial literacy, and enterprise incubation.",
+    courses: "2 Courses",
+    logo: logoTech,
+    url: "https://aliko-academy-tech.lovable.app/",
+    accent: "from-orange-50 to-orange-50/50",
   },
 ];
 
@@ -39,6 +41,21 @@ const CategoryCarousel = () => {
   return (
     <section className="section-padding bg-muted/30">
       <div className="section-container">
+        {/* Pre-card banner */}
+        <div className="text-center mb-10">
+          <h2 className="text-3xl md:text-4xl font-heading font-bold text-foreground mb-4">
+            Choose Your Pathway
+          </h2>
+          <p className="text-muted-foreground max-w-2xl mx-auto mb-6">
+            Each stream is designed with employers and industry experts to ensure your skills match real market demand.
+          </p>
+          <div className="inline-block bg-primary/5 border border-primary/20 rounded-lg px-5 py-3">
+            <p className="text-sm text-primary font-medium">
+              Visit each stream website to explore programs, apply, or submit a course inquiry.
+            </p>
+          </div>
+        </div>
+
         <Carousel
           opts={{ align: "start", loop: true }}
           className="w-full"
@@ -46,8 +63,8 @@ const CategoryCarousel = () => {
           <CarouselContent className="-ml-4">
             {categories.map((cat) => (
               <CarouselItem key={cat.title} className="pl-4 md:basis-1/3 basis-4/5">
-                <div className="bg-card rounded-xl border overflow-hidden hover:shadow-lg transition-shadow h-full flex flex-col">
-                  <div className="h-40 overflow-hidden bg-white flex items-center justify-center p-4">
+                <div className="bg-card rounded-xl border overflow-hidden hover:shadow-xl hover:-translate-y-1 transition-all duration-300 h-full flex flex-col">
+                  <div className={`h-40 overflow-hidden bg-gradient-to-br ${cat.accent} flex items-center justify-center p-4`}>
                     <img
                       src={cat.logo}
                       alt={cat.title}
@@ -67,7 +84,7 @@ const CategoryCarousel = () => {
                         rel="noopener noreferrer"
                         className="inline-flex items-center gap-1.5 text-sm font-medium text-primary hover:underline"
                       >
-                        View Website <ExternalLink className="w-3.5 h-3.5" />
+                        Visit Stream Website <ExternalLink className="w-3.5 h-3.5" />
                       </a>
                     </div>
                   </div>

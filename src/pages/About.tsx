@@ -1,34 +1,32 @@
-import { Target, Layers, Star, Heart } from "lucide-react";
+import { GraduationCap, FlaskConical, Briefcase } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import heroAbout from "@/assets/hero-about.jpg";
 
-const sections = [
+const deliveryCards = [
   {
-    icon: Target,
-    title: "Why We Exist",
-    content:
-      "Africa's youth represent its greatest asset, yet millions lack access to quality skills training aligned with market needs. AlikoHub Academy exists to close this gap with dignity-centered, opportunity-driven pathways that transform potential into livelihood.",
+    icon: GraduationCap,
+    title: "Hybrid Learning Infrastructure",
+    content: "Scalable LMS combined with in-person hubs to deliver flexible, high-quality education at scale.",
   },
   {
-    icon: Layers,
-    title: "How We Deliver",
-    content:
-      "We combine hybrid learning environments, a modern LMS platform, applied labs, and dedicated mentorship to create a learning experience that goes far beyond traditional coursework. Our hubs connect learners to real-world practice and employer networks.",
+    icon: FlaskConical,
+    title: "Applied & Experiential",
+    content: "Labs, case studies, and field deployment ensure learners gain hands-on, practical experience.",
   },
   {
-    icon: Star,
-    title: "What Makes Us Different",
-    content:
-      "Every pathway is co-designed with employers and industry experts to ensure graduates meet real hiring needs. We measure success not by enrollment, but by outcomes, 75-85% of our learners transition into employment, further education, or ventures.",
+    icon: Briefcase,
+    title: "Integrated Career Support",
+    content: "Advisory services, resume preparation, and job matching connect graduates to real opportunities.",
   },
-  {
-    icon: Heart,
-    title: "Commitment to Inclusion",
-    content:
-      "We actively target 45% female participation across all pathways. Inclusion isn't an afterthought, it's built into our curriculum design, mentorship matching, and community programming to ensure equitable access for all learners.",
-  },
+];
+
+const differencePoints = [
+  "We design for outcomes, not enrollment.",
+  "We integrate public health, STEM, and enterprise pathways.",
+  "We align with continental priorities and global standards.",
+  "We measure progress, not just participation.",
 ];
 
 const About = () => {
@@ -45,14 +43,13 @@ const About = () => {
                 About Us
               </span>
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-heading font-bold leading-tight text-foreground">
-                A Dignity-Centered <span className="text-gradient">Workforce Ecosystem</span>
+                A Workforce Ecosystem Rooted in <span className="text-gradient">Dignity and Opportunity</span>
               </h1>
               <p className="mt-6 text-lg text-muted-foreground leading-relaxed max-w-lg">
-                Aliko Academy is part of AlikoHub's resourcefulness ecosystem, connecting learning, mentorship, applied practice, and opportunity across Africa and global pathways.
+                Aliko Academy is the education engine of AlikoHub's Resourcefulness Ecosystem, integrating learning, mentorship, applied innovation, and real-world pathways.
               </p>
               <div className="flex flex-wrap gap-4 mt-8">
-                <Button size="lg">Get a Proposal</Button>
-                <Button size="lg" variant="outline">Apply / Sign Up</Button>
+                <Button size="lg">Apply Now</Button>
               </div>
             </div>
 
@@ -78,23 +75,74 @@ const About = () => {
         </div>
       </section>
 
-      {/* About Sections */}
+      {/* Our Purpose */}
       <section className="section-padding">
+        <div className="section-container max-w-3xl">
+          <h2 className="text-3xl md:text-4xl font-heading font-bold text-foreground mb-6 text-center">
+            Our Purpose
+          </h2>
+          <div className="space-y-4 text-muted-foreground leading-relaxed text-center">
+            <p className="text-lg">
+              We exist because talent is universal, but opportunity is not.
+            </p>
+            <p>
+              Aliko Academy bridges that gap by aligning education with labor markets, industry demand, and regional development priorities. Our pathways are designed to create measurable outcomes for learners, employers, and communities.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* How We Deliver */}
+      <section className="section-padding section-alt">
         <div className="section-container">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {sections.map((s) => (
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-heading font-bold text-foreground">
+              How We Deliver
+            </h2>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {deliveryCards.map((card) => (
               <div
-                key={s.title}
-                className="bg-card rounded-xl border p-8 hover:shadow-lg transition-shadow"
+                key={card.title}
+                className="bg-card rounded-xl border p-8 hover:shadow-lg hover:-translate-y-1 transition-all duration-300"
               >
                 <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mb-5">
-                  <s.icon className="w-6 h-6 text-primary" />
+                  <card.icon className="w-6 h-6 text-primary" />
                 </div>
-                <h3 className="font-heading font-semibold text-xl text-foreground mb-3">{s.title}</h3>
-                <p className="text-muted-foreground leading-relaxed">{s.content}</p>
+                <h3 className="font-heading font-semibold text-xl text-foreground mb-3">{card.title}</h3>
+                <p className="text-muted-foreground leading-relaxed">{card.content}</p>
               </div>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* Our Difference */}
+      <section className="section-padding">
+        <div className="section-container max-w-3xl">
+          <h2 className="text-3xl md:text-4xl font-heading font-bold text-foreground mb-8 text-center">
+            Our Difference
+          </h2>
+          <div className="space-y-4">
+            {differencePoints.map((point) => (
+              <div key={point} className="flex items-start gap-3">
+                <div className="w-2 h-2 rounded-full bg-primary mt-2 shrink-0" />
+                <p className="text-muted-foreground leading-relaxed text-lg">{point}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Commitment to Inclusion */}
+      <section className="section-padding section-alt">
+        <div className="section-container max-w-3xl text-center">
+          <h2 className="text-3xl md:text-4xl font-heading font-bold text-foreground mb-6">
+            Commitment to Inclusion
+          </h2>
+          <p className="text-muted-foreground leading-relaxed text-lg">
+            Aliko Academy prioritizes gender equity, underserved communities, and accessible hybrid delivery models. Inclusion is built into our curriculum design, mentorship matching, and community programming to ensure equitable access for all learners.
+          </p>
         </div>
       </section>
 
@@ -103,7 +151,7 @@ const About = () => {
         <div className="section-container">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
             {[
-              { value: "75–85%", label: "Employment Outcomes" },
+              { value: "75-85%", label: "Employment Outcomes" },
               { value: "45%", label: "Female Participation Target" },
               { value: "1000+", label: "Learners Trained" },
               { value: "4", label: "Specialized Pathways" },
