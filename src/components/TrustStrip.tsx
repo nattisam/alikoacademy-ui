@@ -9,13 +9,13 @@ const items = [
 ];
 
 const TrustStrip = () => (
-  <div className="section-alt border-y">
+  <div className="border-y" style={{ backgroundColor: "hsl(30 80% 95%)" }}>
     <div className="section-container py-5">
       <div className="flex flex-wrap items-center justify-center gap-6 md:gap-10">
         {items.map((item) => (
           <div key={item.label} className="flex items-center gap-2.5">
-            <item.icon className={`w-4 h-4 ${item.color}`} />
-            <span className={`text-sm font-bold ${item.color}`}>{item.label}</span>
+            <item.icon className="w-4 h-4 text-primary" />
+            <span className="text-sm font-bold text-primary">{item.label}</span>
           </div>
         ))}
       </div>
