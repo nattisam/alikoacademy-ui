@@ -9,7 +9,7 @@ const Footer = () => (
             Aliko<span className="text-accent">Hub</span> Academy
           </Link>
           <p className="mt-3 text-sm opacity-70 leading-relaxed">
-            Building Africa's workforce ecosystem—connecting learning, mentorship, and opportunity.
+            Building Africa's workforce ecosystem, connecting learning, mentorship, and opportunity.
           </p>
         </div>
 
