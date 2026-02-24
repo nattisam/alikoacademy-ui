@@ -45,28 +45,28 @@ const LmsDashboard = () => {
       <LmsNavbar />
 
       {/* Dashboard Header */}
-      <section className="bg-card border-b">
+      <section className="bg-gradient-to-r from-slate-800 to-slate-900 border-b">
         <div className="section-container py-8 md:py-10">
           <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-6">
             <div>
-              <h1 className="text-2xl md:text-3xl font-heading font-bold text-foreground">
+              <h1 className="text-2xl md:text-3xl font-heading font-bold text-white">
                 Welcome back, Learner
               </h1>
-              <p className="mt-1 text-muted-foreground">
-                You are enrolled in: <span className="font-medium text-foreground">Aliko Academy Tech</span>
+              <p className="mt-1 text-white/70">
+                You are enrolled in: <span className="font-medium text-white">Aliko Academy Tech</span>
               </p>
               <div className="mt-4 max-w-md">
                 <div className="flex items-center justify-between text-sm mb-2">
-                  <span className="text-muted-foreground">Overall Progress</span>
-                  <span className="font-semibold text-foreground">68%</span>
+                  <span className="text-white/60">Overall Progress</span>
+                  <span className="font-semibold text-white">68%</span>
                 </div>
                 <Progress value={68} className="h-2.5" />
               </div>
-              <p className="mt-3 text-sm text-muted-foreground">
-                Next Milestone: <span className="font-medium text-foreground">Complete Module 5, Cloud Deployment</span>
+              <p className="mt-3 text-sm text-white/60">
+                Next Milestone: <span className="font-medium text-white">Complete Module 5, Cloud Deployment</span>
               </p>
             </div>
-            <Button size="lg" className="gap-2 self-start">
+            <Button size="lg" className="gap-2 self-start bg-white text-slate-900 hover:bg-white/90">
               Continue Learning <ArrowRight className="w-4 h-4" />
             </Button>
           </div>
@@ -114,13 +114,13 @@ const LmsDashboard = () => {
               <h3 className="font-heading font-semibold text-foreground mb-4">Learning Summary</h3>
               <div className="grid grid-cols-2 gap-4">
                 {[
-                  { icon: BookOpen, label: "Courses Active", value: "3" },
-                  { icon: Award, label: "Completed", value: "2" },
-                  { icon: Clock, label: "Hours Learned", value: "47" },
-                  { icon: TrendingUp, label: "Avg Score", value: "82%" },
+                  { icon: BookOpen, label: "Courses Active", value: "3", bg: "bg-blue-50", iconColor: "text-blue-600" },
+                  { icon: Award, label: "Completed", value: "2", bg: "bg-emerald-50", iconColor: "text-emerald-600" },
+                  { icon: Clock, label: "Hours Learned", value: "47", bg: "bg-amber-50", iconColor: "text-amber-600" },
+                  { icon: TrendingUp, label: "Avg Score", value: "82%", bg: "bg-purple-50", iconColor: "text-purple-600" },
                 ].map((stat) => (
-                  <div key={stat.label} className="text-center p-3 rounded-lg bg-muted/50">
-                    <stat.icon className="w-5 h-5 text-accent mx-auto mb-1" />
+                  <div key={stat.label} className={`text-center p-3 rounded-lg ${stat.bg}`}>
+                    <stat.icon className={`w-5 h-5 ${stat.iconColor} mx-auto mb-1`} />
                     <p className="text-lg font-heading font-bold text-foreground">{stat.value}</p>
                     <p className="text-xs text-muted-foreground">{stat.label}</p>
                   </div>

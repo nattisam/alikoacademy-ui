@@ -34,8 +34,8 @@ const LmsCertifications = () => {
               <div key={cert.credentialId} className="bg-card rounded-lg border p-6 hover:shadow-md transition-shadow duration-200">
                 <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
                   <div className="flex items-start gap-4">
-                    <div className="w-12 h-12 rounded-lg bg-muted flex items-center justify-center shrink-0">
-                      <Award className="w-6 h-6 text-accent" />
+                    <div className="w-12 h-12 rounded-lg bg-gradient-to-br from-amber-50 to-amber-100 flex items-center justify-center shrink-0">
+                      <Award className="w-6 h-6 text-amber-600" />
                     </div>
                     <div>
                       <span className={`text-xs font-medium px-2.5 py-1 rounded-full ${cert.streamClass}`}>{cert.stream}</span>

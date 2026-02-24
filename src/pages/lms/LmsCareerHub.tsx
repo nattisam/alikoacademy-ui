@@ -8,24 +8,36 @@ const careerTools = [
     title: "Resume Builder",
     desc: "Create a professional resume tailored to your skills and career goals.",
     cta: "Build Resume",
+    bg: "bg-gradient-to-br from-blue-50 to-blue-100/50",
+    iconBg: "bg-blue-100",
+    iconColor: "text-blue-600",
   },
   {
     icon: Video,
     title: "Mock Interview",
     desc: "Practice with industry-aligned mock interviews and get feedback.",
     cta: "Schedule Session",
+    bg: "bg-gradient-to-br from-amber-50 to-orange-100/50",
+    iconBg: "bg-amber-100",
+    iconColor: "text-amber-600",
   },
   {
     icon: Briefcase,
     title: "Internship Board",
     desc: "Browse internship opportunities matched to your stream and skill level.",
     cta: "View Opportunities",
+    bg: "bg-gradient-to-br from-emerald-50 to-green-100/50",
+    iconBg: "bg-emerald-100",
+    iconColor: "text-emerald-600",
   },
   {
     icon: Upload,
     title: "Portfolio Upload",
     desc: "Showcase your projects and certifications to potential employers.",
     cta: "Upload Work",
+    bg: "bg-gradient-to-br from-purple-50 to-purple-100/50",
+    iconBg: "bg-purple-100",
+    iconColor: "text-purple-600",
   },
 ];
 
@@ -42,10 +54,10 @@ const LmsCareerHub = () => {
           {careerTools.map((tool) => (
             <div
               key={tool.title}
-              className="bg-card rounded-lg border p-6 hover:shadow-md transition-shadow duration-200"
+              className={`${tool.bg} rounded-lg border p-6 hover:shadow-md transition-shadow duration-200`}
             >
-              <div className="w-10 h-10 rounded-lg bg-muted flex items-center justify-center mb-4">
-                <tool.icon className="w-5 h-5 text-accent" />
+              <div className={`w-10 h-10 rounded-lg ${tool.iconBg} flex items-center justify-center mb-4`}>
+                <tool.icon className={`w-5 h-5 ${tool.iconColor}`} />
               </div>
               <h3 className="font-heading font-semibold text-foreground mb-2">{tool.title}</h3>
               <p className="text-sm text-muted-foreground leading-relaxed mb-4">{tool.desc}</p>
