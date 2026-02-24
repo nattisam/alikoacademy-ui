@@ -34,20 +34,23 @@ const LmsExplore = () => {
     <div className="min-h-screen bg-background">
       <LmsNavbar />
 
-      <div className="section-container py-8 md:py-12">
-        <h1 className="text-2xl md:text-3xl font-heading font-bold text-foreground mb-6">Explore Courses</h1>
-
-        {/* Search */}
-        <div className="relative mb-6 max-w-2xl mx-auto">
-          <Search className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-muted-foreground" />
-          <input
-            type="text"
-            placeholder="Search courses..."
-            value={search}
-            onChange={(e) => setSearch(e.target.value)}
-            className="w-full pl-12 pr-4 py-3 rounded-lg border bg-card text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-accent/30"
-          />
+      <div className="relative overflow-hidden bg-gradient-to-r from-blue-600 to-blue-800 py-10">
+        <div className="section-container relative z-10">
+          <h1 className="text-2xl md:text-3xl font-heading font-bold text-white mb-6">Explore Courses</h1>
+          <div className="relative max-w-2xl mx-auto">
+            <Search className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-muted-foreground" />
+            <input
+              type="text"
+              placeholder="Search courses..."
+              value={search}
+              onChange={(e) => setSearch(e.target.value)}
+              className="w-full pl-12 pr-4 py-3 rounded-lg border-0 bg-white/90 text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-white/50"
+            />
+          </div>
         </div>
+      </div>
+
+      <div className="section-container py-8 pb-12">
 
         {/* Filters */}
         <div className="flex flex-wrap gap-4 mb-8">
@@ -90,7 +93,11 @@ const LmsExplore = () => {
               key={course.title}
               className="bg-card rounded-lg border overflow-hidden hover:shadow-md transition-shadow duration-200"
             >
-              <div className="h-32 bg-muted flex items-center justify-center">
+              <div className={`h-32 flex items-center justify-center ${
+                course.stream === "Health" ? "bg-gradient-to-br from-rose-50 to-red-100/60" :
+                course.stream === "Tech" ? "bg-gradient-to-br from-blue-50 to-blue-100/60" :
+                "bg-gradient-to-br from-emerald-50 to-green-100/60"
+              }`}>
                 <span className={`text-xs font-medium px-3 py-1 rounded-full ${course.streamClass}`}>
                   {course.stream}
                 </span>
