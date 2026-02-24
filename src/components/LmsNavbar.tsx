@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { Menu, X, Bell, User, LogOut, ChevronDown } from "lucide-react";
+import { Menu, X, Bell, User, LogOut, ChevronDown, Shield, CreditCard, BellRing, Settings, Camera } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import logoLms from "@/assets/logo-lms.png";
 
@@ -68,21 +68,44 @@ const LmsNavbar = () => {
             </button>
 
             {profileOpen && (
-              <div className="absolute right-0 top-full mt-2 w-48 bg-card rounded-lg border shadow-lg py-2 z-50">
-                <Link
-                  to="/lms"
-                  onClick={() => setProfileOpen(false)}
-                  className="flex items-center gap-2 px-4 py-2 text-sm text-foreground hover:bg-muted transition-colors"
-                >
-                  <User className="w-4 h-4" /> Dashboard
-                </Link>
-                <Link
-                  to="/"
-                  onClick={() => setProfileOpen(false)}
-                  className="flex items-center gap-2 px-4 py-2 text-sm text-muted-foreground hover:bg-muted transition-colors"
-                >
-                  <LogOut className="w-4 h-4" /> Back to Website
-                </Link>
+              <div className="absolute right-0 top-full mt-2 w-56 bg-card rounded-lg border shadow-lg py-2 z-[100]">
+                {/* User info header */}
+                <div className="px-4 py-3 border-b">
+                  <div className="flex items-center gap-3">
+                    <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-sm font-bold text-primary">BA</div>
+                    <div>
+                      <p className="text-sm font-semibold text-foreground">Boni Birassa Aliko</p>
+                      <p className="text-xs text-muted-foreground">Student</p>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="py-1">
+                  <Link to="/lms" onClick={() => setProfileOpen(false)} className="flex items-center gap-3 px-4 py-2 text-sm text-foreground hover:bg-muted transition-colors">
+                    <User className="w-4 h-4" /> Profile
+                  </Link>
+                  <Link to="/lms" onClick={() => setProfileOpen(false)} className="flex items-center gap-3 px-4 py-2 text-sm text-foreground hover:bg-muted transition-colors">
+                    <Camera className="w-4 h-4" /> Photo
+                  </Link>
+                  <Link to="/lms" onClick={() => setProfileOpen(false)} className="flex items-center gap-3 px-4 py-2 text-sm text-foreground hover:bg-muted transition-colors">
+                    <Shield className="w-4 h-4" /> Account Security
+                  </Link>
+                  <Link to="/lms" onClick={() => setProfileOpen(false)} className="flex items-center gap-3 px-4 py-2 text-sm text-foreground hover:bg-muted transition-colors">
+                    <CreditCard className="w-4 h-4" /> Subscriptions
+                  </Link>
+                  <Link to="/lms" onClick={() => setProfileOpen(false)} className="flex items-center gap-3 px-4 py-2 text-sm text-foreground hover:bg-muted transition-colors">
+                    <BellRing className="w-4 h-4" /> Notification Preferences
+                  </Link>
+                  <Link to="/lms" onClick={() => setProfileOpen(false)} className="flex items-center gap-3 px-4 py-2 text-sm text-foreground hover:bg-muted transition-colors">
+                    <Settings className="w-4 h-4" /> Settings
+                  </Link>
+                </div>
+
+                <div className="border-t py-1">
+                  <Link to="/" onClick={() => setProfileOpen(false)} className="flex items-center gap-3 px-4 py-2 text-sm text-muted-foreground hover:bg-muted transition-colors">
+                    <LogOut className="w-4 h-4" /> Back to Website
+                  </Link>
+                </div>
               </div>
             )}
           </div>
