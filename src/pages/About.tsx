@@ -24,9 +24,9 @@ const deliveryCards = [
 
 const differencePoints = [
   "We design for outcomes, not enrollment.",
-  "We integrate public health, STEM, and enterprise pathways.",
-  "We align with continental priorities and global standards.",
-  "We measure progress, not just participation.",
+  "We integrate Health, Technology, and Engineering pathways under one structured model.",
+  "We align with workforce demand and continental development priorities.",
+  "We build confidence, competence, and career readiness together.",
 ];
 
 const About = () => {
@@ -46,7 +46,7 @@ const About = () => {
                 A Workforce Ecosystem Rooted in <span className="text-gradient">Dignity and Opportunity</span>
               </h1>
               <p className="mt-6 text-lg text-muted-foreground leading-relaxed max-w-lg">
-                Aliko Academy is the education engine of AlikoHub's Resourcefulness Ecosystem, integrating learning, mentorship, applied innovation, and real-world pathways.
+                Aliko Academy is the education engine of AlikoHub's Resourcefulness Ecosystem, integrating learning, mentorship, applied innovation, and career pathways across Africa and global markets.
               </p>
               <div className="flex flex-wrap gap-4 mt-8">
                 <Button size="lg">Apply Now</Button>
@@ -79,14 +79,17 @@ const About = () => {
       <section className="section-padding">
         <div className="section-container max-w-3xl">
           <h2 className="text-3xl md:text-4xl font-heading font-bold text-foreground mb-6 text-center">
-            Our Purpose
+            Why We Exist
           </h2>
           <div className="space-y-4 text-muted-foreground leading-relaxed text-center">
             <p className="text-lg">
-              We exist because talent is universal, but opportunity is not.
+              Talent is universal, but opportunity is not.
             </p>
             <p>
-              Aliko Academy bridges that gap by aligning education with labor markets, industry demand, and regional development priorities. Our pathways are designed to create measurable outcomes for learners, employers, and communities.
+              Aliko Academy bridges that gap by aligning in-demand skills with labor markets, public health systems, infrastructure development, and emerging digital industries.
+            </p>
+            <p>
+              We prepare learners not just for employment, but for leadership and contribution.
             </p>
           </div>
         </div>
@@ -121,7 +124,7 @@ const About = () => {
       <section className="section-padding">
         <div className="section-container max-w-3xl">
           <h2 className="text-3xl md:text-4xl font-heading font-bold text-foreground mb-8 text-center">
-            Our Difference
+            What Makes Us Different
           </h2>
           <div className="space-y-4">
             {differencePoints.map((point) => (
@@ -138,10 +141,10 @@ const About = () => {
       <section className="section-padding section-alt">
         <div className="section-container max-w-3xl text-center">
           <h2 className="text-3xl md:text-4xl font-heading font-bold text-foreground mb-6">
-            Commitment to Inclusion
+            Our Commitment
           </h2>
           <p className="text-muted-foreground leading-relaxed text-lg">
-            Aliko Academy prioritizes gender equity, underserved communities, and accessible hybrid delivery models. Inclusion is built into our curriculum design, mentorship matching, and community programming to ensure equitable access for all learners.
+            Aliko Academy prioritizes inclusive access, gender equity, and hybrid delivery models to ensure learners from diverse backgrounds can participate and thrive.
           </p>
         </div>
       </section>

@@ -12,28 +12,31 @@ import logoHealth from "@/assets/logo-health.png";
 
 const categories = [
   {
-    title: "Digital Health & One Health",
-    description: "Prepare for roles in health data analytics, digital epidemiology, public health systems, and climate-linked health resilience.",
+    title: "Aliko Academy Health",
+    description: "Clinical and digital health pathways including CNA, medical coding, CPR/BLS, and advanced health analytics for resilient healthcare systems.",
     courses: "2 Courses",
     logo: logoHealth,
     url: "https://aliko-academy-health.lovable.app/",
-    accent: "from-primary/10 to-primary/5",
+    accent: "from-red-50 to-red-50/50",
+    btnLabel: "Visit Health Stream Website",
   },
   {
-    title: "STEM & Engineering",
-    description: "Develop practical competencies in engineering tools, infrastructure systems, modeling, GIS, and sustainable technologies.",
+    title: "Aliko Academy Tech",
+    description: "Career-ready programs in software engineering, data, AI, and cloud systems aligned with modern digital workforce demands.",
+    courses: "2 Courses",
+    logo: logoTech,
+    url: "https://aliko-academy-tech.lovable.app/",
+    accent: "from-primary/10 to-primary/5",
+    btnLabel: "Visit Tech Stream Website",
+  },
+  {
+    title: "Aliko Academy STEM",
+    description: "Applied engineering and design software training across civil, electrical, mechanical, aviation, and BIM systems.",
     courses: "2 Courses",
     logo: logoStem,
     url: "https://aliko-academy-stem.lovable.app/",
     accent: "from-green-50 to-green-50/50",
-  },
-  {
-    title: "Innovation & Entrepreneurship",
-    description: "Transform ideas into ventures through structured startup support, financial literacy, and enterprise incubation.",
-    courses: "2 Courses",
-    logo: logoTech,
-    url: "https://aliko-academy-tech.lovable.app/",
-    accent: "from-orange-50 to-orange-50/50",
+    btnLabel: "Visit STEM Stream Website",
   },
 ];
 
@@ -84,7 +87,7 @@ const CategoryCarousel = () => {
                         rel="noopener noreferrer"
                         className="inline-flex items-center gap-1.5 text-sm font-medium text-primary hover:underline"
                       >
-                        Visit Stream Website <ExternalLink className="w-3.5 h-3.5" />
+                        {cat.btnLabel} <ExternalLink className="w-3.5 h-3.5" />
                       </a>
                     </div>
                   </div>

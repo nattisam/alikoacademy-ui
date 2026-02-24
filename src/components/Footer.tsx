@@ -16,10 +16,9 @@ const Footer = () => (
         <div>
           <h4 className="font-heading font-semibold text-sm mb-4 opacity-90">Pathways</h4>
           <ul className="space-y-2 text-sm opacity-70">
-            <li>Digital Health & One Health</li>
-            <li>STEM & Engineering</li>
-            <li>Innovation & Entrepreneurship</li>
-            <li>Career Readiness</li>
+            <li>Aliko Academy Health</li>
+            <li>Aliko Academy Tech</li>
+            <li>Aliko Academy STEM</li>
           </ul>
         </div>
 
