@@ -14,10 +14,10 @@ const TrustStrip = () => (
       <div className="flex flex-wrap items-center justify-center gap-6 md:gap-8">
         {items.map((item) => (
           <div key={item.label} className="flex flex-col items-center text-center">
-            <div className="w-12 h-12 rounded-full border-2 border-white/30 bg-white/20 flex items-center justify-center">
-              <item.icon className="w-5 h-5 text-white" />
+            <div className="w-12 h-12 rounded-full border-2 border-white/50 bg-white/25 flex items-center justify-center">
+              <item.icon className="w-5 h-5 text-white" strokeWidth={2.5} />
             </div>
-            <span className="text-xs font-semibold text-white mt-2 whitespace-nowrap">{item.label}</span>
+            <span className="text-xs font-bold text-white mt-2 whitespace-nowrap drop-shadow-sm">{item.label}</span>
           </div>
         ))}
       </div>
