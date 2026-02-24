@@ -11,6 +11,12 @@ import LmsDashboard from "./pages/lms/LmsDashboard";
 import LmsExplore from "./pages/lms/LmsExplore";
 import LmsMyLearning from "./pages/lms/LmsMyLearning";
 import LmsCertifications from "./pages/lms/LmsCertifications";
+import LmsProfile from "./pages/lms/LmsProfile";
+import LmsPhoto from "./pages/lms/LmsPhoto";
+import LmsAccountSecurity from "./pages/lms/LmsAccountSecurity";
+import LmsSubscriptions from "./pages/lms/LmsSubscriptions";
+import LmsNotifications from "./pages/lms/LmsNotifications";
+import LmsSettings from "./pages/lms/LmsSettings";
 
 
 const queryClient = new QueryClient();
@@ -29,6 +35,12 @@ const App = () => (
           <Route path="/lms/explore" element={<LmsExplore />} />
           <Route path="/lms/my-learning" element={<LmsMyLearning />} />
           <Route path="/lms/certifications" element={<LmsCertifications />} />
+          <Route path="/lms/profile" element={<LmsProfile />} />
+          <Route path="/lms/photo" element={<LmsPhoto />} />
+          <Route path="/lms/account-security" element={<LmsAccountSecurity />} />
+          <Route path="/lms/subscriptions" element={<LmsSubscriptions />} />
+          <Route path="/lms/notifications" element={<LmsNotifications />} />
+          <Route path="/lms/settings" element={<LmsSettings />} />
           
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
         </Routes>

@@ -92,22 +92,22 @@ const LmsNavbar = () => {
                 </div>
 
                 <div className="py-1">
-                  <Link to="/lms" onClick={() => setProfileOpen(false)} className="flex items-center gap-3 px-4 py-2 text-sm text-foreground hover:bg-muted transition-colors">
+                  <Link to="/lms/profile" onClick={() => setProfileOpen(false)} className="flex items-center gap-3 px-4 py-2 text-sm text-foreground hover:bg-muted transition-colors">
                     <User className="w-4 h-4" /> Profile
                   </Link>
-                  <Link to="/lms" onClick={() => setProfileOpen(false)} className="flex items-center gap-3 px-4 py-2 text-sm text-foreground hover:bg-muted transition-colors">
+                  <Link to="/lms/photo" onClick={() => setProfileOpen(false)} className="flex items-center gap-3 px-4 py-2 text-sm text-foreground hover:bg-muted transition-colors">
                     <Camera className="w-4 h-4" /> Photo
                   </Link>
-                  <Link to="/lms" onClick={() => setProfileOpen(false)} className="flex items-center gap-3 px-4 py-2 text-sm text-foreground hover:bg-muted transition-colors">
+                  <Link to="/lms/account-security" onClick={() => setProfileOpen(false)} className="flex items-center gap-3 px-4 py-2 text-sm text-foreground hover:bg-muted transition-colors">
                     <Shield className="w-4 h-4" /> Account Security
                   </Link>
-                  <Link to="/lms" onClick={() => setProfileOpen(false)} className="flex items-center gap-3 px-4 py-2 text-sm text-foreground hover:bg-muted transition-colors">
+                  <Link to="/lms/subscriptions" onClick={() => setProfileOpen(false)} className="flex items-center gap-3 px-4 py-2 text-sm text-foreground hover:bg-muted transition-colors">
                     <CreditCard className="w-4 h-4" /> Subscriptions
                   </Link>
-                  <Link to="/lms" onClick={() => setProfileOpen(false)} className="flex items-center gap-3 px-4 py-2 text-sm text-foreground hover:bg-muted transition-colors">
+                  <Link to="/lms/notifications" onClick={() => setProfileOpen(false)} className="flex items-center gap-3 px-4 py-2 text-sm text-foreground hover:bg-muted transition-colors">
                     <BellRing className="w-4 h-4" /> Notification Preferences
                   </Link>
-                  <Link to="/lms" onClick={() => setProfileOpen(false)} className="flex items-center gap-3 px-4 py-2 text-sm text-foreground hover:bg-muted transition-colors">
+                  <Link to="/lms/settings" onClick={() => setProfileOpen(false)} className="flex items-center gap-3 px-4 py-2 text-sm text-foreground hover:bg-muted transition-colors">
                     <Settings className="w-4 h-4" /> Settings
                   </Link>
                 </div>
