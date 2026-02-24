@@ -12,21 +12,33 @@ const differentiators = [
     icon: Shield,
     title: "Employer-Aligned Design",
     desc: "Programs are structured around real workforce demand and industry expectations.",
+    bg: "bg-gradient-to-br from-blue-50 to-blue-100/50",
+    iconBg: "bg-blue-100",
+    iconColor: "text-blue-600",
   },
   {
     icon: Monitor,
     title: "Hybrid & Accessible Model",
     desc: "Blended LMS delivery combined with hands-on labs and mentorship.",
+    bg: "bg-gradient-to-br from-amber-50 to-orange-100/50",
+    iconBg: "bg-amber-100",
+    iconColor: "text-amber-600",
   },
   {
     icon: Briefcase,
     title: "Career-Integrated Pathways",
     desc: "Internships, job matching, and enterprise development embedded in the learning journey.",
+    bg: "bg-gradient-to-br from-emerald-50 to-green-100/50",
+    iconBg: "bg-emerald-100",
+    iconColor: "text-emerald-600",
   },
   {
     icon: Heart,
     title: "Dignity-Centered Approach",
     desc: "Inclusive design focused on measurable opportunity, not just enrollment.",
+    bg: "bg-gradient-to-br from-rose-50 to-pink-100/50",
+    iconBg: "bg-rose-100",
+    iconColor: "text-rose-600",
   },
 ];
 
@@ -93,9 +105,9 @@ const Index = () => {
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {differentiators.map((d) => (
-              <div key={d.title} className="bg-card rounded-lg border p-6 text-center hover:shadow-md transition-shadow duration-200">
-                <div className="w-12 h-12 rounded-lg bg-muted flex items-center justify-center mx-auto mb-4">
-                  <d.icon className="w-5 h-5 text-accent" />
+              <div key={d.title} className={`${d.bg} rounded-lg border p-6 text-center hover:shadow-md transition-shadow duration-200`}>
+                <div className={`w-12 h-12 rounded-lg ${d.iconBg} flex items-center justify-center mx-auto mb-4`}>
+                  <d.icon className={`w-5 h-5 ${d.iconColor}`} />
                 </div>
                 <h3 className="font-heading font-semibold text-foreground mb-2">{d.title}</h3>
                 <p className="text-sm text-muted-foreground leading-relaxed">{d.desc}</p>
@@ -162,14 +174,14 @@ const Index = () => {
             </div>
             <div className="grid grid-cols-2 gap-4">
               {[
-                { icon: Shield, title: "Enterprise Training", desc: "Tailored programs for teams of any size" },
-                { icon: Monitor, title: "University Partnerships", desc: "Accredited pathways for institutions" },
-                { icon: Briefcase, title: "Government Programs", desc: "Workforce development at national scale" },
-                { icon: Heart, title: "Impact Reporting", desc: "Measurable outcomes & ROI tracking" },
+                { icon: Shield, title: "Enterprise Training", desc: "Tailored programs for teams of any size", bg: "bg-gradient-to-br from-blue-50 to-blue-100/40", iconBg: "bg-blue-100", iconColor: "text-blue-600" },
+                { icon: Monitor, title: "University Partnerships", desc: "Accredited pathways for institutions", bg: "bg-gradient-to-br from-amber-50 to-orange-100/40", iconBg: "bg-amber-100", iconColor: "text-amber-600" },
+                { icon: Briefcase, title: "Government Programs", desc: "Workforce development at national scale", bg: "bg-gradient-to-br from-emerald-50 to-green-100/40", iconBg: "bg-emerald-100", iconColor: "text-emerald-600" },
+                { icon: Heart, title: "Impact Reporting", desc: "Measurable outcomes & ROI tracking", bg: "bg-gradient-to-br from-purple-50 to-purple-100/40", iconBg: "bg-purple-100", iconColor: "text-purple-600" },
               ].map((card) => (
-                <div key={card.title} className="bg-card rounded-lg border p-5 hover:shadow-md transition-shadow duration-200">
-                  <div className="w-10 h-10 rounded-lg bg-muted flex items-center justify-center mb-3">
-                    <card.icon className="w-5 h-5 text-accent" />
+                <div key={card.title} className={`${card.bg} rounded-lg border p-5 hover:shadow-md transition-shadow duration-200`}>
+                  <div className={`w-10 h-10 rounded-lg ${card.iconBg} flex items-center justify-center mb-3`}>
+                    <card.icon className={`w-5 h-5 ${card.iconColor}`} />
                   </div>
                   <h4 className="font-heading font-semibold text-sm text-foreground mb-1">{card.title}</h4>
                   <p className="text-xs text-muted-foreground leading-relaxed">{card.desc}</p>
