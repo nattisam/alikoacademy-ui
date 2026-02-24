@@ -31,7 +31,7 @@ const LmsNavbar = () => {
     <nav className="sticky top-0 z-50 nav-solid">
       <div className="section-container flex items-center justify-between h-16 md:h-20">
         <Link to="/lms" className="flex items-center">
-          <img src={logoLms} alt="Aliko Academy LMS" className="h-20 md:h-28 w-auto object-contain brightness-0 invert" style={{ imageRendering: 'auto' }} />
+          <img src={logoLms} alt="Aliko Academy LMS" className="h-20 md:h-28 w-auto object-contain" style={{ imageRendering: 'auto' }} />
         </Link>
 
         <div className="hidden md:flex items-center gap-8">

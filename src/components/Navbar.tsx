@@ -19,7 +19,7 @@ const Navbar = () => {
     <nav className="sticky top-0 z-50 nav-solid">
       <div className="section-container flex items-center justify-between h-16 md:h-20">
         <Link to="/" className="flex items-center">
-          <img src={logoAcademy} alt="Aliko Academy" className="h-10 md:h-12 w-auto brightness-0 invert" />
+          <img src={logoAcademy} alt="Aliko Academy" className="h-10 md:h-12 w-auto" />
         </Link>
 
         <div className="hidden md:flex items-center gap-8">
