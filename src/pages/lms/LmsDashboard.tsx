@@ -1,4 +1,4 @@
-import { ArrowRight, BookOpen, Clock, Award, TrendingUp, CheckSquare, Square, Calendar } from "lucide-react";
+import { ArrowRight, BookOpen, Clock, Award, TrendingUp, Calendar, Video, Radio, PlayCircle, ExternalLink } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Progress } from "@/components/ui/progress";
 import LmsNavbar from "@/components/LmsNavbar";
@@ -27,17 +27,16 @@ const activeCourses = [
   },
 ];
 
-const careerChecklist = [
-  { label: "Resume Completed", done: true },
-  { label: "Skills Assessment", done: true },
-  { label: "Mock Interview", done: false },
-  { label: "Internship Application", done: false },
+const upcomingWebinars = [
+  { title: "AI in Healthcare: Trends & Opportunities", date: "Mar 5, 2026", time: "2:00 PM", speaker: "Dr. Amina Yusuf", status: "upcoming" as const },
+  { title: "Cloud Career Pathways for Beginners", date: "Mar 8, 2026", time: "10:00 AM", speaker: "Eng. Farouk Ali", status: "live" as const },
+  { title: "STEM Innovation & Entrepreneurship", date: "Mar 10, 2026", time: "3:00 PM", speaker: "Prof. Halima Bello", status: "upcoming" as const },
 ];
 
-const upcomingSessions = [
-  { title: "Live Mentoring: Career Transitions", date: "Mar 5, 2026", time: "2:00 PM" },
-  { title: "Webinar: AI in Healthcare", date: "Mar 8, 2026", time: "10:00 AM" },
-  { title: "Office Hours: STEM Projects", date: "Mar 10, 2026", time: "3:00 PM" },
+const recordedWebinars = [
+  { title: "Getting Started with Data Science", duration: "1h 20m", views: 342 },
+  { title: "Resume Building for Tech Careers", duration: "45m", views: 518 },
+  { title: "Introduction to Biomedical Engineering", duration: "1h 05m", views: 276 },
 ];
 
 const LmsDashboard = () => {
@@ -133,36 +132,56 @@ const LmsDashboard = () => {
               </div>
             </div>
 
-            {/* Career Readiness */}
+            {/* Upcoming Webinars */}
             <div className="bg-card rounded-xl border p-5">
-              <h3 className="font-heading font-semibold text-foreground mb-4">Career Readiness</h3>
+              <div className="flex items-center justify-between mb-4">
+                <h3 className="font-heading font-semibold text-foreground flex items-center gap-2">
+                  <Video className="w-4 h-4 text-primary" /> Webinars
+                </h3>
+              </div>
               <div className="space-y-3">
-                {careerChecklist.map((item) => (
-                  <div key={item.label} className="flex items-center gap-3">
-                    {item.done ? (
-                      <CheckSquare className="w-5 h-5 text-primary" />
-                    ) : (
-                      <Square className="w-5 h-5 text-muted-foreground" />
-                    )}
-                    <span className={`text-sm ${item.done ? "text-foreground" : "text-muted-foreground"}`}>
-                      {item.label}
-                    </span>
+                {upcomingWebinars.map((webinar) => (
+                  <div key={webinar.title} className="flex items-start gap-3 p-3 rounded-lg bg-muted/50 hover:bg-muted transition-colors">
+                    <div className="mt-0.5">
+                      {webinar.status === "live" ? (
+                        <Radio className="w-4 h-4 text-destructive animate-pulse" />
+                      ) : (
+                        <Calendar className="w-4 h-4 text-primary" />
+                      )}
+                    </div>
+                    <div className="flex-1">
+                      <div className="flex items-center gap-2">
+                        <p className="text-sm font-medium text-foreground">{webinar.title}</p>
+                        {webinar.status === "live" && (
+                          <span className="text-[10px] font-bold uppercase px-1.5 py-0.5 rounded bg-destructive/10 text-destructive">Live</span>
+                        )}
+                      </div>
+                      <p className="text-xs text-muted-foreground">{webinar.speaker} · {webinar.date} at {webinar.time}</p>
+                    </div>
+                    <Button variant={webinar.status === "live" ? "default" : "outline"} size="sm" className="text-xs shrink-0">
+                      {webinar.status === "live" ? "Join" : "RSVP"}
+                    </Button>
                   </div>
                 ))}
               </div>
             </div>
 
-            {/* Upcoming Sessions */}
+            {/* Recorded Webinars */}
             <div className="bg-card rounded-xl border p-5">
-              <h3 className="font-heading font-semibold text-foreground mb-4">Upcoming Sessions</h3>
+              <h3 className="font-heading font-semibold text-foreground mb-4 flex items-center gap-2">
+                <PlayCircle className="w-4 h-4 text-primary" /> Recorded Sessions
+              </h3>
               <div className="space-y-3">
-                {upcomingSessions.map((session) => (
-                  <div key={session.title} className="flex items-start gap-3">
-                    <Calendar className="w-4 h-4 text-primary mt-0.5" />
-                    <div>
-                      <p className="text-sm font-medium text-foreground">{session.title}</p>
-                      <p className="text-xs text-muted-foreground">{session.date} at {session.time}</p>
+                {recordedWebinars.map((rec) => (
+                  <div key={rec.title} className="flex items-center gap-3 group cursor-pointer">
+                    <div className="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 transition-colors">
+                      <PlayCircle className="w-4 h-4 text-primary" />
                     </div>
+                    <div className="flex-1">
+                      <p className="text-sm font-medium text-foreground group-hover:text-primary transition-colors">{rec.title}</p>
+                      <p className="text-xs text-muted-foreground">{rec.duration} · {rec.views} views</p>
+                    </div>
+                    <ExternalLink className="w-3 h-3 text-muted-foreground opacity-0 group-hover:opacity-100 transition-opacity" />
                   </div>
                 ))}
               </div>
