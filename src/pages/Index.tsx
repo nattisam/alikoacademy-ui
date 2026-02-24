@@ -58,8 +58,8 @@ const Index = () => {
         <div className="section-container py-20 md:py-28 lg:py-36">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-14 items-center">
             <div className="animate-fade-in-up">
-              <h1 className="text-4xl md:text-5xl lg:text-[3.5rem] font-heading font-bold leading-tight text-foreground">
-                Build In-Demand Skills for Real Opportunities
+              <h1 className="text-4xl md:text-5xl lg:text-[3.75rem] font-heading font-bold leading-tight text-foreground">
+                Build <span className="text-accent">In-Demand Skills</span> for <span className="text-primary">Real Opportunities</span>
               </h1>
               <p className="mt-6 text-lg text-muted-foreground leading-relaxed max-w-lg">
                 Aliko Academy delivers market-aligned pathways across Health, Technology, and Engineering, designed to move learners from training to sustainable livelihoods.
@@ -76,7 +76,7 @@ const Index = () => {
 
             <div className="relative animate-fade-in-up" style={{ animationDelay: "0.15s" }}>
               <div className="rounded-lg overflow-hidden">
-                <img src={heroImage} alt="Students learning in a modern classroom" className="w-full h-auto object-cover" />
+                <img src={heroImage} alt="Students learning in a modern classroom" className="w-full h-auto object-cover min-h-[320px] md:min-h-[420px]" />
               </div>
               <div className="absolute -bottom-4 -left-4 bg-card rounded-lg shadow-lg p-4 border">
                 <p className="text-2xl font-heading font-bold text-foreground">1000+</p>
