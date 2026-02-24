@@ -10,12 +10,15 @@ const items = [
 
 const TrustStrip = () => (
   <div className="border-y" style={{ backgroundColor: "hsla(25, 80%, 52%, 0.06)" }}>
-    <div className="section-container py-5">
-      <div className="flex flex-wrap items-center justify-center gap-6 md:gap-10">
+    <div className="section-container py-4">
+      <div className="flex flex-wrap items-center justify-center gap-2.5">
         {items.map((item) => (
-          <div key={item.label} className="flex items-center gap-2.5">
-            <item.icon className="w-4 h-4 text-primary" />
-            <span className="text-sm font-bold text-primary">{item.label}</span>
+          <div
+            key={item.label}
+            className="flex items-center gap-2 rounded-lg border bg-card/80 px-3.5 py-2 shadow-sm"
+          >
+            <item.icon className="w-4 h-4 text-primary shrink-0" />
+            <span className="text-xs font-bold text-primary whitespace-nowrap">{item.label}</span>
           </div>
         ))}
       </div>
