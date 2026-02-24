@@ -11,7 +11,7 @@ import LmsDashboard from "./pages/lms/LmsDashboard";
 import LmsExplore from "./pages/lms/LmsExplore";
 import LmsMyLearning from "./pages/lms/LmsMyLearning";
 import LmsCertifications from "./pages/lms/LmsCertifications";
-import LmsCareerHub from "./pages/lms/LmsCareerHub";
+
 
 const queryClient = new QueryClient();
 
@@ -29,7 +29,7 @@ const App = () => (
           <Route path="/lms/explore" element={<LmsExplore />} />
           <Route path="/lms/my-learning" element={<LmsMyLearning />} />
           <Route path="/lms/certifications" element={<LmsCertifications />} />
-          <Route path="/lms/career-hub" element={<LmsCareerHub />} />
+          
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
         </Routes>
       </BrowserRouter>
