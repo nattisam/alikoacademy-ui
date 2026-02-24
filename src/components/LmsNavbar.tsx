@@ -4,11 +4,11 @@ import { Menu, X, Bell, User, LogOut, ChevronDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import logoAcademy from "@/assets/logo-aliko-academy.png";
 
-const lmsLinks = [
+const lmsLinks: { label: string; to: string; external?: boolean }[] = [
   { label: "Explore", to: "/lms/explore" },
   { label: "My Learning", to: "/lms/my-learning" },
   { label: "Certifications", to: "/lms/certifications" },
-  { label: "Career Hub", to: "/lms/career-hub" },
+  { label: "Career Hub", to: "https://career.alikohub.com/", external: true },
 ];
 
 const LmsNavbar = () => {
@@ -24,17 +24,29 @@ const LmsNavbar = () => {
         </Link>
 
         <div className="hidden md:flex items-center gap-8">
-          {lmsLinks.map((link) => (
-            <Link
-              key={link.to}
-              to={link.to}
-              className={`text-sm font-medium transition-colors hover:text-primary ${
-                location.pathname === link.to ? "text-primary" : "text-muted-foreground"
-              }`}
-            >
-              {link.label}
-            </Link>
-          ))}
+          {lmsLinks.map((link) =>
+            link.external ? (
+              <a
+                key={link.to}
+                href={link.to}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-sm font-medium text-muted-foreground transition-colors hover:text-primary"
+              >
+                {link.label}
+              </a>
+            ) : (
+              <Link
+                key={link.to}
+                to={link.to}
+                className={`text-sm font-medium transition-colors hover:text-primary ${
+                  location.pathname === link.to ? "text-primary" : "text-muted-foreground"
+                }`}
+              >
+                {link.label}
+              </Link>
+            )
+          )}
         </div>
 
         <div className="hidden md:flex items-center gap-3">
@@ -83,16 +95,29 @@ const LmsNavbar = () => {
 
       {open && (
         <div className="md:hidden bg-card border-b px-4 pb-4 space-y-3">
-          {lmsLinks.map((link) => (
-            <Link
-              key={link.to}
-              to={link.to}
-              onClick={() => setOpen(false)}
-              className="block py-2 text-sm font-medium text-foreground hover:text-primary"
-            >
-              {link.label}
-            </Link>
-          ))}
+          {lmsLinks.map((link) =>
+            link.external ? (
+              <a
+                key={link.to}
+                href={link.to}
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={() => setOpen(false)}
+                className="block py-2 text-sm font-medium text-foreground hover:text-primary"
+              >
+                {link.label}
+              </a>
+            ) : (
+              <Link
+                key={link.to}
+                to={link.to}
+                onClick={() => setOpen(false)}
+                className="block py-2 text-sm font-medium text-foreground hover:text-primary"
+              >
+                {link.label}
+              </Link>
+            )
+          )}
           <div className="flex gap-2 pt-2">
             <Button variant="ghost" size="sm" className="flex-1" asChild>
               <Link to="/">Back to Website</Link>
