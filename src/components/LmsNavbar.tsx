@@ -28,7 +28,7 @@ const LmsNavbar = () => {
   }, []);
 
   return (
-    <nav className="sticky top-0 z-50 nav-solid">
+    <nav className="sticky top-0 z-50 nav-solid border-b border-border shadow-sm">
       <div className="section-container flex items-center justify-between h-16 md:h-20">
         <Link to="/lms" className="flex items-center">
           <img src={logoLms} alt="Aliko Academy LMS" className="h-20 md:h-28 w-auto object-contain" style={{ imageRendering: 'auto' }} />
@@ -42,7 +42,7 @@ const LmsNavbar = () => {
                 href={link.to}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-sm font-medium text-white/70 transition-colors hover:text-white"
+                className="text-sm font-medium text-muted-foreground transition-colors hover:text-primary"
               >
                 {link.label}
               </a>
@@ -50,8 +50,8 @@ const LmsNavbar = () => {
               <Link
                 key={link.to}
                 to={link.to}
-                className={`text-sm font-medium transition-colors hover:text-white ${
-                  location.pathname === link.to ? "text-white" : "text-white/70"
+                className={`text-sm font-medium transition-colors hover:text-primary ${
+                  location.pathname === link.to ? "text-primary" : "text-muted-foreground"
                 }`}
               >
                 {link.label}
@@ -64,13 +64,13 @@ const LmsNavbar = () => {
           <div className="relative" ref={profileRef}>
             <button
               onClick={() => setProfileOpen(!profileOpen)}
-              className="flex items-center gap-2 px-3 py-2 rounded-lg hover:bg-white/10 transition-colors"
+              className="flex items-center gap-2 px-3 py-2 rounded-lg hover:bg-muted transition-colors"
             >
-              <div className="w-8 h-8 rounded-full bg-white/20 flex items-center justify-center">
-                <User className="w-4 h-4 text-white" />
+              <div className="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center">
+                <User className="w-4 h-4 text-primary" />
               </div>
-              <span className="text-sm font-medium text-white">Student</span>
-              <ChevronDown className="w-3 h-3 text-white/70" />
+              <span className="text-sm font-medium text-foreground">Student</span>
+              <ChevronDown className="w-3 h-3 text-muted-foreground" />
             </button>
 
             {profileOpen && (
@@ -116,13 +116,13 @@ const LmsNavbar = () => {
           </div>
         </div>
 
-        <button className="md:hidden text-white" onClick={() => setOpen(!open)}>
+        <button className="md:hidden text-foreground" onClick={() => setOpen(!open)}>
           {open ? <X size={24} /> : <Menu size={24} />}
         </button>
       </div>
 
       {open && (
-        <div className="md:hidden border-t border-white/10 px-4 pb-4 space-y-3">
+        <div className="md:hidden border-t px-4 pb-4 space-y-3">
           {lmsLinks.map((link) =>
             link.external ? (
               <a
@@ -131,7 +131,7 @@ const LmsNavbar = () => {
                 target="_blank"
                 rel="noopener noreferrer"
                 onClick={() => setOpen(false)}
-                className="block py-2 text-sm font-medium text-white/80 hover:text-white"
+                className="block py-2 text-sm font-medium text-muted-foreground hover:text-primary"
               >
                 {link.label}
               </a>
@@ -140,14 +140,14 @@ const LmsNavbar = () => {
                 key={link.to}
                 to={link.to}
                 onClick={() => setOpen(false)}
-                className="block py-2 text-sm font-medium text-white/80 hover:text-white"
+                className="block py-2 text-sm font-medium text-muted-foreground hover:text-primary"
               >
                 {link.label}
               </Link>
             )
           )}
           <div className="flex gap-2 pt-2">
-            <Button variant="ghost" size="sm" className="flex-1 text-white/80 hover:text-white hover:bg-white/10" asChild>
+            <Button variant="ghost" size="sm" className="flex-1 text-muted-foreground hover:text-primary" asChild>
               <Link to="/">Back to Website</Link>
             </Button>
           </div>
