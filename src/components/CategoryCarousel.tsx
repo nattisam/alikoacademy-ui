@@ -17,8 +17,8 @@ const categories = [
     courses: "2 Courses",
     logo: logoHealth,
     url: "https://aliko-academy-health.lovable.app/",
-    accent: "from-red-50 to-red-50/50",
-    btnLabel: "Visit Health Stream Website",
+    streamClass: "stream-health",
+    borderColor: "border-l-health",
   },
   {
     title: "Aliko Academy Tech",
@@ -26,8 +26,8 @@ const categories = [
     courses: "2 Courses",
     logo: logoTech,
     url: "https://aliko-academy-tech.lovable.app/",
-    accent: "from-primary/10 to-primary/5",
-    btnLabel: "Visit Tech Stream Website",
+    streamClass: "stream-tech",
+    borderColor: "border-l-tech",
   },
   {
     title: "Aliko Academy STEM",
@@ -35,16 +35,15 @@ const categories = [
     courses: "2 Courses",
     logo: logoStem,
     url: "https://aliko-academy-stem.lovable.app/",
-    accent: "from-green-50 to-green-50/50",
-    btnLabel: "Visit STEM Stream Website",
+    streamClass: "stream-stem",
+    borderColor: "border-l-stem",
   },
 ];
 
 const CategoryCarousel = () => {
   return (
-    <section className="section-padding bg-muted/30">
+    <section id="streams" className="section-padding">
       <div className="section-container">
-        {/* Pre-card banner */}
         <div className="text-center mb-10">
           <h2 className="text-3xl md:text-4xl font-heading font-bold text-foreground mb-4">
             Choose Your Pathway
@@ -52,11 +51,9 @@ const CategoryCarousel = () => {
           <p className="text-muted-foreground max-w-2xl mx-auto mb-6">
             Each stream is designed with employers and industry experts to ensure your skills match real market demand.
           </p>
-          <div className="inline-block bg-primary/5 border border-primary/20 rounded-lg px-5 py-3">
-            <p className="text-sm text-primary font-medium">
-              Visit each stream website to explore programs, apply, or submit a course inquiry.
-            </p>
-          </div>
+          <p className="text-sm text-muted-foreground">
+            Visit each stream website to explore programs, apply, or submit a course inquiry.
+          </p>
         </div>
 
         <Carousel
@@ -66,8 +63,8 @@ const CategoryCarousel = () => {
           <CarouselContent className="-ml-4">
             {categories.map((cat) => (
               <CarouselItem key={cat.title} className="pl-4 md:basis-1/3 basis-4/5">
-                <div className="bg-card rounded-xl border overflow-hidden hover:shadow-xl hover:-translate-y-1 transition-all duration-300 h-full flex flex-col">
-                  <div className={`h-40 overflow-hidden bg-gradient-to-br ${cat.accent} flex items-center justify-center p-4`}>
+                <div className={`bg-card rounded-lg border border-l-4 ${cat.borderColor} overflow-hidden hover:shadow-md transition-shadow duration-200 h-full flex flex-col`}>
+                  <div className="h-36 overflow-hidden bg-muted flex items-center justify-center p-4">
                     <img
                       src={cat.logo}
                       alt={cat.title}
@@ -75,7 +72,7 @@ const CategoryCarousel = () => {
                     />
                   </div>
                   <div className="p-5 flex flex-col flex-1">
-                    <h3 className="font-heading font-bold text-xl text-foreground">{cat.title}</h3>
+                    <h3 className="font-heading font-bold text-lg text-foreground">{cat.title}</h3>
                     <p className="mt-2 text-sm text-muted-foreground leading-relaxed flex-1">
                       {cat.description}
                     </p>
@@ -85,9 +82,9 @@ const CategoryCarousel = () => {
                         href={cat.url}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="inline-flex items-center gap-1.5 text-sm font-medium text-primary hover:underline"
+                        className="inline-flex items-center gap-1.5 text-sm font-medium text-accent hover:underline"
                       >
-                        {cat.btnLabel} <ExternalLink className="w-3.5 h-3.5" />
+                        Visit Stream Website <ExternalLink className="w-3.5 h-3.5" />
                       </a>
                     </div>
                   </div>

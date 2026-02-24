@@ -7,15 +7,15 @@ const streams = ["All", "Health", "Tech", "STEM"];
 const levels = ["All Levels", "Beginner", "Intermediate", "Advanced"];
 
 const courses = [
-  { title: "CNA Certification Prep", stream: "Health", level: "Beginner", duration: "8 weeks", rating: 4.7, streamColor: "bg-destructive/10 text-destructive" },
-  { title: "Medical Coding Fundamentals", stream: "Health", level: "Intermediate", duration: "10 weeks", rating: 4.5, streamColor: "bg-destructive/10 text-destructive" },
-  { title: "Health Data Analytics", stream: "Health", level: "Advanced", duration: "12 weeks", rating: 4.8, streamColor: "bg-destructive/10 text-destructive" },
-  { title: "Full-Stack Web Development", stream: "Tech", level: "Intermediate", duration: "16 weeks", rating: 4.9, streamColor: "bg-primary/10 text-primary" },
-  { title: "Introduction to Cloud Computing", stream: "Tech", level: "Beginner", duration: "6 weeks", rating: 4.6, streamColor: "bg-primary/10 text-primary" },
-  { title: "AI and Machine Learning", stream: "Tech", level: "Advanced", duration: "14 weeks", rating: 4.8, streamColor: "bg-primary/10 text-primary" },
-  { title: "AutoCAD for Civil Engineering", stream: "STEM", level: "Beginner", duration: "8 weeks", rating: 4.4, streamColor: "bg-green-100 text-green-700" },
-  { title: "BIM Systems and Design", stream: "STEM", level: "Intermediate", duration: "10 weeks", rating: 4.5, streamColor: "bg-green-100 text-green-700" },
-  { title: "Electrical Systems Modeling", stream: "STEM", level: "Advanced", duration: "12 weeks", rating: 4.3, streamColor: "bg-green-100 text-green-700" },
+  { title: "CNA Certification Prep", stream: "Health", level: "Beginner", duration: "8 weeks", rating: 4.7, streamClass: "stream-health" },
+  { title: "Medical Coding Fundamentals", stream: "Health", level: "Intermediate", duration: "10 weeks", rating: 4.5, streamClass: "stream-health" },
+  { title: "Health Data Analytics", stream: "Health", level: "Advanced", duration: "12 weeks", rating: 4.8, streamClass: "stream-health" },
+  { title: "Full-Stack Web Development", stream: "Tech", level: "Intermediate", duration: "16 weeks", rating: 4.9, streamClass: "stream-tech" },
+  { title: "Introduction to Cloud Computing", stream: "Tech", level: "Beginner", duration: "6 weeks", rating: 4.6, streamClass: "stream-tech" },
+  { title: "AI and Machine Learning", stream: "Tech", level: "Advanced", duration: "14 weeks", rating: 4.8, streamClass: "stream-tech" },
+  { title: "AutoCAD for Civil Engineering", stream: "STEM", level: "Beginner", duration: "8 weeks", rating: 4.4, streamClass: "stream-stem" },
+  { title: "BIM Systems and Design", stream: "STEM", level: "Intermediate", duration: "10 weeks", rating: 4.5, streamClass: "stream-stem" },
+  { title: "Electrical Systems Modeling", stream: "STEM", level: "Advanced", duration: "12 weeks", rating: 4.3, streamClass: "stream-stem" },
 ];
 
 const LmsExplore = () => {
@@ -38,14 +38,14 @@ const LmsExplore = () => {
         <h1 className="text-2xl md:text-3xl font-heading font-bold text-foreground mb-6">Explore Courses</h1>
 
         {/* Search */}
-        <div className="relative mb-6">
+        <div className="relative mb-6 max-w-2xl mx-auto">
           <Search className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-muted-foreground" />
           <input
             type="text"
             placeholder="Search courses..."
             value={search}
             onChange={(e) => setSearch(e.target.value)}
-            className="w-full pl-12 pr-4 py-3 rounded-xl border bg-card text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/30"
+            className="w-full pl-12 pr-4 py-3 rounded-lg border bg-card text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-accent/30"
           />
         </div>
 
@@ -88,10 +88,10 @@ const LmsExplore = () => {
           {filtered.map((course) => (
             <div
               key={course.title}
-              className="bg-card rounded-xl border overflow-hidden hover:shadow-lg hover:-translate-y-1 transition-all duration-300"
+              className="bg-card rounded-lg border overflow-hidden hover:shadow-md transition-shadow duration-200"
             >
               <div className="h-32 bg-muted flex items-center justify-center">
-                <span className={`text-xs font-medium px-3 py-1 rounded-full ${course.streamColor}`}>
+                <span className={`text-xs font-medium px-3 py-1 rounded-full ${course.streamClass}`}>
                   {course.stream}
                 </span>
               </div>

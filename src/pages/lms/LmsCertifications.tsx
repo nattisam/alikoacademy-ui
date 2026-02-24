@@ -6,14 +6,14 @@ const certificates = [
   {
     title: "CPR/BLS Certification",
     stream: "Health",
-    streamColor: "bg-destructive/10 text-destructive",
+    streamClass: "stream-health",
     issuedDate: "January 15, 2026",
     credentialId: "CERT-HEALTH-2026-001",
   },
   {
     title: "Python Fundamentals",
     stream: "Tech",
-    streamColor: "bg-primary/10 text-primary",
+    streamClass: "stream-tech",
     issuedDate: "December 10, 2025",
     credentialId: "CERT-TECH-2025-042",
   },
@@ -31,14 +31,14 @@ const LmsCertifications = () => {
         {certificates.length > 0 ? (
           <div className="space-y-4">
             {certificates.map((cert) => (
-              <div key={cert.credentialId} className="bg-card rounded-xl border p-6 hover:shadow-md transition-all duration-300">
+              <div key={cert.credentialId} className="bg-card rounded-lg border p-6 hover:shadow-md transition-shadow duration-200">
                 <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
                   <div className="flex items-start gap-4">
-                    <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center shrink-0">
-                      <Award className="w-6 h-6 text-primary" />
+                    <div className="w-12 h-12 rounded-lg bg-muted flex items-center justify-center shrink-0">
+                      <Award className="w-6 h-6 text-accent" />
                     </div>
                     <div>
-                      <span className={`text-xs font-medium px-2 py-1 rounded-full ${cert.streamColor}`}>{cert.stream}</span>
+                      <span className={`text-xs font-medium px-2.5 py-1 rounded-full ${cert.streamClass}`}>{cert.stream}</span>
                       <h3 className="font-heading font-semibold text-foreground mt-2">{cert.title}</h3>
                       <p className="text-sm text-muted-foreground mt-1">Issued: {cert.issuedDate}</p>
                       <p className="text-xs text-muted-foreground mt-1 font-mono">ID: {cert.credentialId}</p>

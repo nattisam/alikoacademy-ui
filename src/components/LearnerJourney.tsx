@@ -10,25 +10,31 @@ const steps = [
 ];
 
 const LearnerJourney = () => (
-  <section className="journey-strip section-padding">
+  <section className="section-alt section-padding">
     <div className="section-container">
-      <h2 className="text-2xl md:text-3xl font-heading font-bold text-center mb-4">
+      <h2 className="text-2xl md:text-3xl font-heading font-bold text-foreground text-center mb-4">
         From Learning to Livelihood
       </h2>
-      <p className="text-center opacity-80 mb-12 max-w-xl mx-auto">
-        Every learner progresses through structured certification, applied practice, mentorship, and career or enterprise pathways designed for real-world impact.
+      <p className="text-center text-muted-foreground mb-14 max-w-xl mx-auto">
+        Every learner progresses through structured certification, applied practice, mentorship, and career pathways designed for real-world impact.
       </p>
 
-      <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6">
-        {steps.map((step) => (
-          <div key={step.label} className="flex flex-col items-center text-center">
-            <div className="w-16 h-16 rounded-full bg-background/10 backdrop-blur-sm border border-background/20 flex items-center justify-center">
-              <step.icon className="w-7 h-7" />
+      {/* Horizontal progression */}
+      <div className="relative">
+        {/* Line connector */}
+        <div className="hidden lg:block absolute top-8 left-[8%] right-[8%] h-px bg-border" />
+
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8">
+          {steps.map((step, i) => (
+            <div key={step.label} className="flex flex-col items-center text-center relative">
+              <div className="w-16 h-16 rounded-full bg-card border-2 border-border flex items-center justify-center z-10">
+                <step.icon className="w-6 h-6 text-accent" />
+              </div>
+              <span className="font-heading font-semibold text-sm mt-3 text-foreground">{step.label}</span>
+              <span className="text-xs text-muted-foreground mt-1 leading-snug">{step.desc}</span>
             </div>
-            <span className="font-heading font-semibold text-sm mt-3">{step.label}</span>
-            <span className="text-xs opacity-70 mt-1 leading-snug">{step.desc}</span>
-          </div>
-        ))}
+          ))}
+        </div>
       </div>
     </div>
   </section>

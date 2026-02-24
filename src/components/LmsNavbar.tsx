@@ -1,6 +1,6 @@
 import { useState, useRef, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { Menu, X, Bell, User, LogOut, ChevronDown, Shield, CreditCard, BellRing, Settings, Camera } from "lucide-react";
+import { Menu, X, User, LogOut, ChevronDown, Shield, CreditCard, BellRing, Settings, Camera } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import logoLms from "@/assets/logo-lms.png";
 
@@ -28,10 +28,10 @@ const LmsNavbar = () => {
   }, []);
 
   return (
-    <nav className="sticky top-0 z-50 bg-card/95 backdrop-blur-md border-b">
-      <div className="section-container flex items-center justify-between h-20 md:h-24">
+    <nav className="sticky top-0 z-50 nav-solid">
+      <div className="section-container flex items-center justify-between h-16 md:h-20">
         <Link to="/lms" className="flex items-center">
-          <img src={logoLms} alt="Aliko Academy LMS" className="h-24 md:h-36 w-auto object-contain" style={{ imageRendering: 'auto' }} />
+          <img src={logoLms} alt="Aliko Academy LMS" className="h-20 md:h-28 w-auto object-contain brightness-0 invert" style={{ imageRendering: 'auto' }} />
         </Link>
 
         <div className="hidden md:flex items-center gap-8">
@@ -42,7 +42,7 @@ const LmsNavbar = () => {
                 href={link.to}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-sm font-medium text-muted-foreground transition-colors hover:text-primary"
+                className="text-sm font-medium text-white/70 transition-colors hover:text-white"
               >
                 {link.label}
               </a>
@@ -50,8 +50,8 @@ const LmsNavbar = () => {
               <Link
                 key={link.to}
                 to={link.to}
-                className={`text-sm font-medium transition-colors hover:text-primary ${
-                  location.pathname === link.to ? "text-primary" : "text-muted-foreground"
+                className={`text-sm font-medium transition-colors hover:text-white ${
+                  location.pathname === link.to ? "text-white" : "text-white/70"
                 }`}
               >
                 {link.label}
@@ -61,26 +61,20 @@ const LmsNavbar = () => {
         </div>
 
         <div className="hidden md:flex items-center gap-3">
-          <button className="relative p-2 rounded-full hover:bg-muted transition-colors">
-            <Bell className="w-5 h-5 text-muted-foreground" />
-            <span className="absolute top-1 right-1 w-2 h-2 bg-accent rounded-full" />
-          </button>
-
           <div className="relative" ref={profileRef}>
             <button
               onClick={() => setProfileOpen(!profileOpen)}
-              className="flex items-center gap-2 px-3 py-2 rounded-lg hover:bg-muted transition-colors"
+              className="flex items-center gap-2 px-3 py-2 rounded-lg hover:bg-white/10 transition-colors"
             >
-              <div className="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center">
-                <User className="w-4 h-4 text-primary" />
+              <div className="w-8 h-8 rounded-full bg-white/20 flex items-center justify-center">
+                <User className="w-4 h-4 text-white" />
               </div>
-              <span className="text-sm font-medium text-foreground">Student</span>
-              <ChevronDown className="w-3 h-3 text-muted-foreground" />
+              <span className="text-sm font-medium text-white">Student</span>
+              <ChevronDown className="w-3 h-3 text-white/70" />
             </button>
 
             {profileOpen && (
               <div className="absolute right-0 top-full mt-2 w-56 bg-card rounded-lg border shadow-lg py-2 z-[100]">
-                {/* User info header */}
                 <div className="px-4 py-3 border-b">
                   <div className="flex items-center gap-3">
                     <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-sm font-bold text-primary">BA</div>
@@ -122,13 +116,13 @@ const LmsNavbar = () => {
           </div>
         </div>
 
-        <button className="md:hidden text-foreground" onClick={() => setOpen(!open)}>
+        <button className="md:hidden text-white" onClick={() => setOpen(!open)}>
           {open ? <X size={24} /> : <Menu size={24} />}
         </button>
       </div>
 
       {open && (
-        <div className="md:hidden bg-card border-b px-4 pb-4 space-y-3">
+        <div className="md:hidden border-t border-white/10 px-4 pb-4 space-y-3">
           {lmsLinks.map((link) =>
             link.external ? (
               <a
@@ -137,7 +131,7 @@ const LmsNavbar = () => {
                 target="_blank"
                 rel="noopener noreferrer"
                 onClick={() => setOpen(false)}
-                className="block py-2 text-sm font-medium text-foreground hover:text-primary"
+                className="block py-2 text-sm font-medium text-white/80 hover:text-white"
               >
                 {link.label}
               </a>
@@ -146,14 +140,14 @@ const LmsNavbar = () => {
                 key={link.to}
                 to={link.to}
                 onClick={() => setOpen(false)}
-                className="block py-2 text-sm font-medium text-foreground hover:text-primary"
+                className="block py-2 text-sm font-medium text-white/80 hover:text-white"
               >
                 {link.label}
               </Link>
             )
           )}
           <div className="flex gap-2 pt-2">
-            <Button variant="ghost" size="sm" className="flex-1" asChild>
+            <Button variant="ghost" size="sm" className="flex-1 text-white/80 hover:text-white hover:bg-white/10" asChild>
               <Link to="/">Back to Website</Link>
             </Button>
           </div>

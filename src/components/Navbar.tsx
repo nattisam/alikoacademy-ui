@@ -7,30 +7,28 @@ import logoAcademy from "@/assets/logo-aliko-academy.png";
 const navLinks = [
   { label: "Home", to: "/" },
   { label: "About", to: "/about" },
+  { label: "Streams", to: "/#streams" },
   { label: "Contact", to: "/contact" },
 ];
-
 
 const Navbar = () => {
   const [open, setOpen] = useState(false);
   const location = useLocation();
 
   return (
-    <nav className="sticky top-0 z-50 bg-card/90 backdrop-blur-md border-b">
+    <nav className="sticky top-0 z-50 nav-solid">
       <div className="section-container flex items-center justify-between h-16 md:h-20">
-        {/* Logo */}
         <Link to="/" className="flex items-center">
-          <img src={logoAcademy} alt="Aliko Academy" className="h-10 md:h-12 w-auto" />
+          <img src={logoAcademy} alt="Aliko Academy" className="h-10 md:h-12 w-auto brightness-0 invert" />
         </Link>
 
-        {/* Desktop nav */}
         <div className="hidden md:flex items-center gap-8">
           {navLinks.map((link) => (
             <Link
               key={link.to}
               to={link.to}
-              className={`text-sm font-medium transition-colors hover:text-primary ${
-                location.pathname === link.to ? "text-primary" : "text-muted-foreground"
+              className={`text-sm font-medium transition-colors hover:opacity-100 ${
+                location.pathname === link.to ? "opacity-100 text-white" : "opacity-70 text-white"
               }`}
             >
               {link.label}
@@ -39,34 +37,36 @@ const Navbar = () => {
         </div>
 
         <div className="hidden md:flex items-center gap-3">
-          <Button variant="ghost" size="sm">Login</Button>
-          <Button size="sm" asChild>
+          <Button variant="ghost" size="sm" className="text-white/80 hover:text-white hover:bg-white/10">
+            Login
+          </Button>
+          <Button size="sm" className="bg-white text-foreground hover:bg-white/90" asChild>
             <Link to="/lms">Access LMS</Link>
           </Button>
         </div>
 
-        {/* Mobile toggle */}
-        <button className="md:hidden text-foreground" onClick={() => setOpen(!open)}>
+        <button className="md:hidden text-white" onClick={() => setOpen(!open)}>
           {open ? <X size={24} /> : <Menu size={24} />}
         </button>
       </div>
 
-      {/* Mobile menu */}
       {open && (
-        <div className="md:hidden bg-card border-b px-4 pb-4 space-y-3">
+        <div className="md:hidden border-t border-white/10 px-4 pb-4 space-y-3">
           {navLinks.map((link) => (
             <Link
               key={link.to}
               to={link.to}
               onClick={() => setOpen(false)}
-              className="block py-2 text-sm font-medium text-foreground hover:text-primary"
+              className="block py-2 text-sm font-medium text-white/80 hover:text-white"
             >
               {link.label}
             </Link>
           ))}
           <div className="flex gap-2 pt-2">
-            <Button variant="ghost" size="sm" className="flex-1">Login</Button>
-            <Button size="sm" className="flex-1" asChild>
+            <Button variant="ghost" size="sm" className="flex-1 text-white/80 hover:text-white hover:bg-white/10">
+              Login
+            </Button>
+            <Button size="sm" className="flex-1 bg-white text-foreground hover:bg-white/90" asChild>
               <Link to="/lms">Access LMS</Link>
             </Button>
           </div>
