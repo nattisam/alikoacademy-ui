@@ -10,11 +10,11 @@ const items = [
 
 const TrustStrip = () => (
   <div className="section-alt border-y">
-    <div className="section-container py-6">
+    <div className="section-container py-5">
       <div className="flex flex-wrap items-center justify-center gap-6 md:gap-12">
         {items.map((item) => (
           <div key={item.label} className="flex items-center gap-2 text-muted-foreground">
-            <item.icon className="w-4 h-4 text-primary" />
+            <item.icon className="w-4 h-4 text-accent" />
             <span className="text-sm font-medium">{item.label}</span>
           </div>
         ))}

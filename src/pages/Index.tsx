@@ -1,4 +1,4 @@
-import { ArrowRight, ExternalLink, Shield, Monitor, Briefcase, Heart } from "lucide-react";
+import { ArrowRight, Shield, Monitor, Briefcase, Heart } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
@@ -42,17 +42,17 @@ const Index = () => {
       <Navbar />
 
       {/* Hero */}
-      <section className="relative overflow-hidden" style={{ background: "var(--hero-gradient)" }}>
-        <div className="section-container py-16 md:py-24 lg:py-32">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+      <section className="relative overflow-hidden bg-background">
+        <div className="section-container py-20 md:py-28 lg:py-36">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-14 items-center">
             <div className="animate-fade-in-up">
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-heading font-bold leading-tight text-foreground">
-                Build <span className="text-gradient">In-Demand Skills</span> for Real Opportunities
+              <h1 className="text-4xl md:text-5xl lg:text-[3.5rem] font-heading font-bold leading-tight text-foreground">
+                Build In-Demand Skills for Real Opportunities
               </h1>
               <p className="mt-6 text-lg text-muted-foreground leading-relaxed max-w-lg">
                 Aliko Academy delivers market-aligned pathways across Health, Technology, and Engineering, designed to move learners from training to sustainable livelihoods.
               </p>
-              <div className="flex flex-wrap gap-4 mt-8">
+              <div className="flex flex-wrap gap-4 mt-10">
                 <Button size="lg" className="gap-2">
                   Explore Pathways <ArrowRight className="w-4 h-4" />
                 </Button>
@@ -62,12 +62,12 @@ const Index = () => {
               </div>
             </div>
 
-            <div className="relative animate-fade-in-up" style={{ animationDelay: "0.2s" }}>
-              <div className="rounded-2xl overflow-hidden shadow-2xl">
+            <div className="relative animate-fade-in-up" style={{ animationDelay: "0.15s" }}>
+              <div className="rounded-lg overflow-hidden">
                 <img src={heroImage} alt="Students learning in a modern classroom" className="w-full h-auto object-cover" />
               </div>
-              <div className="absolute -bottom-4 -left-4 bg-card rounded-xl shadow-lg p-4 border">
-                <p className="text-2xl font-heading font-bold text-primary">1000+</p>
+              <div className="absolute -bottom-4 -left-4 bg-card rounded-lg shadow-lg p-4 border">
+                <p className="text-2xl font-heading font-bold text-foreground">1000+</p>
                 <p className="text-xs text-muted-foreground">Learners Enrolled</p>
               </div>
             </div>
@@ -75,19 +75,14 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Value Strip */}
       <TrustStrip />
-
-      {/* Pathways Carousel */}
       <CategoryCarousel />
-
-      {/* Learner Journey */}
       <LearnerJourney />
 
       {/* Why Aliko Academy Is Different */}
-      <section className="section-padding section-alt">
+      <section className="section-padding">
         <div className="section-container">
-          <div className="text-center mb-12">
+          <div className="text-center mb-14">
             <h2 className="text-3xl md:text-4xl font-heading font-bold text-foreground">
               Why Aliko Academy Is Different
             </h2>
@@ -98,9 +93,9 @@ const Index = () => {
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {differentiators.map((d) => (
-              <div key={d.title} className="bg-card rounded-xl border p-6 text-center hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
-                <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-4">
-                  <d.icon className="w-6 h-6 text-primary" />
+              <div key={d.title} className="bg-card rounded-lg border p-6 text-center hover:shadow-md transition-shadow duration-200">
+                <div className="w-12 h-12 rounded-lg bg-muted flex items-center justify-center mx-auto mb-4">
+                  <d.icon className="w-5 h-5 text-accent" />
                 </div>
                 <h3 className="font-heading font-semibold text-foreground mb-2">{d.title}</h3>
                 <p className="text-sm text-muted-foreground leading-relaxed">{d.desc}</p>
@@ -114,15 +109,15 @@ const Index = () => {
       <section className="journey-strip py-16 md:py-20">
         <div className="section-container">
           <div className="text-center mb-10">
-            <h2 className="text-3xl md:text-4xl font-heading font-bold">
+            <h2 className="text-3xl md:text-4xl font-heading font-bold text-white">
               Designed for Measurable Outcomes
             </h2>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
             {impactMetrics.map((m) => (
               <div key={m.label}>
-                <p className="text-4xl md:text-5xl font-heading font-bold">{m.value}</p>
-                <p className="text-sm opacity-80 mt-2">{m.label}</p>
+                <p className="text-4xl md:text-5xl font-heading font-bold text-white">{m.value}</p>
+                <p className="text-sm text-white/70 mt-2">{m.label}</p>
               </div>
             ))}
           </div>
@@ -132,15 +127,15 @@ const Index = () => {
       {/* Academy Enterprise */}
       <section className="section-padding section-alt">
         <div className="section-container">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-14 items-center">
             <div>
-              <span className="inline-block px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-semibold tracking-wide uppercase mb-4">
+              <span className="inline-block px-3 py-1 rounded-full bg-accent/10 text-accent text-xs font-semibold tracking-wide uppercase mb-4">
                 Academy Enterprise
               </span>
               <h2 className="text-3xl md:text-4xl font-heading font-bold text-foreground mb-4">
                 Enterprise Solutions
               </h2>
-              <h3 className="text-xl font-heading font-semibold text-primary mb-4">
+              <h3 className="text-xl font-heading font-semibold text-accent mb-4">
                 Training for Organizations
               </h3>
               <p className="text-muted-foreground leading-relaxed text-lg mb-6">
@@ -154,12 +149,12 @@ const Index = () => {
                   "Certification & compliance tracking",
                 ].map((point) => (
                   <div key={point} className="flex items-start gap-3">
-                    <div className="w-2 h-2 rounded-full bg-primary mt-2 shrink-0" />
+                    <div className="w-1.5 h-1.5 rounded-full bg-accent mt-2.5 shrink-0" />
                     <p className="text-muted-foreground">{point}</p>
                   </div>
                 ))}
               </div>
-              <div className="mt-8">
+              <div className="mt-10">
                 <Button size="lg" className="gap-2">
                   Request a Demo <ArrowRight className="w-4 h-4" />
                 </Button>
@@ -172,9 +167,9 @@ const Index = () => {
                 { icon: Briefcase, title: "Government Programs", desc: "Workforce development at national scale" },
                 { icon: Heart, title: "Impact Reporting", desc: "Measurable outcomes & ROI tracking" },
               ].map((card) => (
-                <div key={card.title} className="bg-card rounded-xl border p-5 hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
-                  <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center mb-3">
-                    <card.icon className="w-5 h-5 text-primary" />
+                <div key={card.title} className="bg-card rounded-lg border p-5 hover:shadow-md transition-shadow duration-200">
+                  <div className="w-10 h-10 rounded-lg bg-muted flex items-center justify-center mb-3">
+                    <card.icon className="w-5 h-5 text-accent" />
                   </div>
                   <h4 className="font-heading font-semibold text-sm text-foreground mb-1">{card.title}</h4>
                   <p className="text-xs text-muted-foreground leading-relaxed">{card.desc}</p>
@@ -191,7 +186,7 @@ const Index = () => {
           <h2 className="text-3xl md:text-4xl font-heading font-bold text-foreground mb-4">
             Ready to Start Your Journey?
           </h2>
-          <p className="text-muted-foreground max-w-xl mx-auto mb-8">
+          <p className="text-muted-foreground max-w-xl mx-auto mb-10">
             Join thousands of learners building in-demand skills for real-world careers.
           </p>
           <div className="flex flex-wrap justify-center gap-4">

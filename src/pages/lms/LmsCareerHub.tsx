@@ -1,4 +1,4 @@
-import { FileText, Video, Briefcase, Upload, Users, ArrowRight } from "lucide-react";
+import { FileText, Video, Briefcase, Upload, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import LmsNavbar from "@/components/LmsNavbar";
 
@@ -11,7 +11,7 @@ const careerTools = [
   },
   {
     icon: Video,
-    title: "Mock Interview Scheduler",
+    title: "Mock Interview",
     desc: "Practice with industry-aligned mock interviews and get feedback.",
     cta: "Schedule Session",
   },
@@ -20,12 +20,6 @@ const careerTools = [
     title: "Internship Board",
     desc: "Browse internship opportunities matched to your stream and skill level.",
     cta: "View Opportunities",
-  },
-  {
-    icon: Users,
-    title: "Employer Partnerships",
-    desc: "Connect with hiring partners aligned with Aliko Academy pathways.",
-    cta: "Explore Partners",
   },
   {
     icon: Upload,
@@ -44,14 +38,14 @@ const LmsCareerHub = () => {
         <h1 className="text-2xl md:text-3xl font-heading font-bold text-foreground mb-2">Career Hub</h1>
         <p className="text-muted-foreground mb-8">Tools and resources to transition from learning to career.</p>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
           {careerTools.map((tool) => (
             <div
               key={tool.title}
-              className="bg-card rounded-xl border p-6 hover:shadow-lg hover:-translate-y-1 transition-all duration-300"
+              className="bg-card rounded-lg border p-6 hover:shadow-md transition-shadow duration-200"
             >
-              <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mb-4">
-                <tool.icon className="w-6 h-6 text-primary" />
+              <div className="w-10 h-10 rounded-lg bg-muted flex items-center justify-center mb-4">
+                <tool.icon className="w-5 h-5 text-accent" />
               </div>
               <h3 className="font-heading font-semibold text-foreground mb-2">{tool.title}</h3>
               <p className="text-sm text-muted-foreground leading-relaxed mb-4">{tool.desc}</p>

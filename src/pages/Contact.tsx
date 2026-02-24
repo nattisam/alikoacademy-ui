@@ -30,7 +30,6 @@ const Contact = () => {
     e.preventDefault();
     if (!validate()) return;
     setLoading(true);
-    // Simulate submission
     setTimeout(() => {
       setLoading(false);
       setSubmitted(true);
@@ -42,6 +41,8 @@ const Contact = () => {
     setForm((prev) => ({ ...prev, [field]: value }));
     if (errors[field]) setErrors((prev) => ({ ...prev, [field]: "" }));
   };
+
+  const inputClass = "w-full rounded-lg border bg-card px-4 py-3 text-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-accent/30";
 
   return (
     <div className="min-h-screen bg-background">
@@ -62,8 +63,8 @@ const Contact = () => {
               { icon: Phone, label: "Phone", value: "+1 (234) 567-890" },
               { icon: MapPin, label: "Location", value: "Africa & Global" },
             ].map((c) => (
-              <div key={c.label} className="bg-card rounded-xl border p-6 text-center">
-                <c.icon className="w-6 h-6 text-primary mx-auto mb-3" />
+              <div key={c.label} className="bg-card rounded-lg border p-6 text-center">
+                <c.icon className="w-5 h-5 text-accent mx-auto mb-3" />
                 <p className="text-sm text-muted-foreground">{c.label}</p>
                 <p className="font-medium text-foreground mt-1">{c.value}</p>
               </div>
@@ -71,8 +72,8 @@ const Contact = () => {
           </div>
 
           {submitted ? (
-            <div className="bg-card rounded-xl border p-12 text-center">
-              <CheckCircle className="w-16 h-16 text-primary mx-auto mb-4" />
+            <div className="bg-card rounded-lg border p-12 text-center">
+              <CheckCircle className="w-14 h-14 text-accent mx-auto mb-4" />
               <h2 className="text-2xl font-heading font-bold text-foreground mb-2">Message Sent!</h2>
               <p className="text-muted-foreground mb-6">Thank you for reaching out. We'll get back to you as soon as possible.</p>
               <Button variant="outline" onClick={() => { setSubmitted(false); setForm({ name: "", email: "", subject: "", message: "" }); }}>
@@ -80,51 +81,23 @@ const Contact = () => {
               </Button>
             </div>
           ) : (
-            <form onSubmit={handleSubmit} className="bg-card rounded-xl border p-8 space-y-5">
+            <form onSubmit={handleSubmit} className="bg-card rounded-lg border p-8 space-y-5">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <div>
-                  <input
-                    type="text"
-                    placeholder="Full Name"
-                    value={form.name}
-                    onChange={(e) => handleChange("name", e.target.value)}
-                    maxLength={100}
-                    className="w-full rounded-lg border bg-background px-4 py-3 text-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/30"
-                  />
+                  <input type="text" placeholder="Full Name" value={form.name} onChange={(e) => handleChange("name", e.target.value)} maxLength={100} className={inputClass} />
                   {errors.name && <p className="text-xs text-destructive mt-1">{errors.name}</p>}
                 </div>
                 <div>
-                  <input
-                    type="email"
-                    placeholder="Email Address"
-                    value={form.email}
-                    onChange={(e) => handleChange("email", e.target.value)}
-                    maxLength={255}
-                    className="w-full rounded-lg border bg-background px-4 py-3 text-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/30"
-                  />
+                  <input type="email" placeholder="Email Address" value={form.email} onChange={(e) => handleChange("email", e.target.value)} maxLength={255} className={inputClass} />
                   {errors.email && <p className="text-xs text-destructive mt-1">{errors.email}</p>}
                 </div>
               </div>
               <div>
-                <input
-                  type="text"
-                  placeholder="Subject"
-                  value={form.subject}
-                  onChange={(e) => handleChange("subject", e.target.value)}
-                  maxLength={200}
-                  className="w-full rounded-lg border bg-background px-4 py-3 text-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/30"
-                />
+                <input type="text" placeholder="Subject" value={form.subject} onChange={(e) => handleChange("subject", e.target.value)} maxLength={200} className={inputClass} />
                 {errors.subject && <p className="text-xs text-destructive mt-1">{errors.subject}</p>}
               </div>
               <div>
-                <textarea
-                  rows={5}
-                  placeholder="Your Message"
-                  value={form.message}
-                  onChange={(e) => handleChange("message", e.target.value)}
-                  maxLength={2000}
-                  className="w-full rounded-lg border bg-background px-4 py-3 text-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/30 resize-none"
-                />
+                <textarea rows={5} placeholder="Your Message" value={form.message} onChange={(e) => handleChange("message", e.target.value)} maxLength={2000} className={`${inputClass} resize-none`} />
                 {errors.message && <p className="text-xs text-destructive mt-1">{errors.message}</p>}
               </div>
               <Button size="lg" className="w-full gap-2" type="submit" disabled={loading}>

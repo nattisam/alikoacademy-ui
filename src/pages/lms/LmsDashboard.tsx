@@ -7,21 +7,21 @@ const activeCourses = [
   {
     title: "Introduction to Cloud Computing",
     stream: "Tech",
-    streamColor: "bg-primary/10 text-primary",
+    streamClass: "stream-tech",
     progress: 68,
     nextLesson: "Module 5: Cloud Deployment",
   },
   {
     title: "Health Data Analytics Foundations",
     stream: "Health",
-    streamColor: "bg-destructive/10 text-destructive",
+    streamClass: "stream-health",
     progress: 34,
     nextLesson: "Module 3: Data Visualization",
   },
   {
     title: "AutoCAD for Civil Engineering",
     stream: "STEM",
-    streamColor: "bg-green-100 text-green-700",
+    streamClass: "stream-stem",
     progress: 85,
     nextLesson: "Module 8: Final Project",
   },
@@ -45,22 +45,22 @@ const LmsDashboard = () => {
       <LmsNavbar />
 
       {/* Dashboard Header */}
-      <section className="border-b" style={{ background: "var(--hero-gradient)" }}>
-        <div className="section-container py-8 md:py-12">
+      <section className="bg-card border-b">
+        <div className="section-container py-8 md:py-10">
           <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-6">
             <div>
               <h1 className="text-2xl md:text-3xl font-heading font-bold text-foreground">
                 Welcome back, Learner
               </h1>
               <p className="mt-1 text-muted-foreground">
-                You are enrolled in: <span className="font-medium text-primary">Aliko Academy Tech</span>
+                You are enrolled in: <span className="font-medium text-foreground">Aliko Academy Tech</span>
               </p>
               <div className="mt-4 max-w-md">
                 <div className="flex items-center justify-between text-sm mb-2">
                   <span className="text-muted-foreground">Overall Progress</span>
                   <span className="font-semibold text-foreground">68%</span>
                 </div>
-                <Progress value={68} className="h-3" />
+                <Progress value={68} className="h-2.5" />
               </div>
               <p className="mt-3 text-sm text-muted-foreground">
                 Next Milestone: <span className="font-medium text-foreground">Complete Module 5, Cloud Deployment</span>
@@ -76,19 +76,16 @@ const LmsDashboard = () => {
       {/* Main Dashboard */}
       <div className="section-container py-8 md:py-12">
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-          {/* Left Column: Active Courses */}
+          {/* Left Column */}
           <div className="lg:col-span-2 space-y-6">
             <h2 className="text-xl font-heading font-semibold text-foreground">My Active Courses</h2>
             <div className="space-y-4">
               {activeCourses.map((course) => (
-                <div
-                  key={course.title}
-                  className="bg-card rounded-xl border p-5 hover:shadow-md hover:-translate-y-0.5 transition-all duration-300"
-                >
+                <div key={course.title} className="bg-card rounded-lg border p-5 hover:shadow-md transition-shadow duration-200">
                   <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
                     <div className="flex-1">
                       <div className="flex items-center gap-2 mb-2">
-                        <span className={`text-xs font-medium px-2 py-1 rounded-full ${course.streamColor}`}>
+                        <span className={`text-xs font-medium px-2.5 py-1 rounded-full ${course.streamClass}`}>
                           {course.stream}
                         </span>
                       </div>
@@ -113,8 +110,7 @@ const LmsDashboard = () => {
 
           {/* Right Column */}
           <div className="space-y-6">
-            {/* Learning Stats */}
-            <div className="bg-card rounded-xl border p-5">
+            <div className="bg-card rounded-lg border p-5">
               <h3 className="font-heading font-semibold text-foreground mb-4">Learning Summary</h3>
               <div className="grid grid-cols-2 gap-4">
                 {[
@@ -124,7 +120,7 @@ const LmsDashboard = () => {
                   { icon: TrendingUp, label: "Avg Score", value: "82%" },
                 ].map((stat) => (
                   <div key={stat.label} className="text-center p-3 rounded-lg bg-muted/50">
-                    <stat.icon className="w-5 h-5 text-primary mx-auto mb-1" />
+                    <stat.icon className="w-5 h-5 text-accent mx-auto mb-1" />
                     <p className="text-lg font-heading font-bold text-foreground">{stat.value}</p>
                     <p className="text-xs text-muted-foreground">{stat.label}</p>
                   </div>
@@ -132,11 +128,10 @@ const LmsDashboard = () => {
               </div>
             </div>
 
-            {/* Upcoming Webinars */}
-            <div className="bg-card rounded-xl border p-5">
+            <div className="bg-card rounded-lg border p-5">
               <div className="flex items-center justify-between mb-4">
                 <h3 className="font-heading font-semibold text-foreground flex items-center gap-2">
-                  <Video className="w-4 h-4 text-primary" /> Webinars
+                  <Video className="w-4 h-4 text-accent" /> Webinars
                 </h3>
               </div>
               <div className="space-y-3">
@@ -144,16 +139,16 @@ const LmsDashboard = () => {
                   <div key={webinar.title} className="flex items-start gap-3 p-3 rounded-lg bg-muted/50 hover:bg-muted transition-colors">
                     <div className="mt-0.5">
                       {webinar.status === "live" ? (
-                        <Radio className="w-4 h-4 text-destructive animate-pulse" />
+                        <Radio className="w-4 h-4 text-health" />
                       ) : (
-                        <Calendar className="w-4 h-4 text-primary" />
+                        <Calendar className="w-4 h-4 text-accent" />
                       )}
                     </div>
                     <div className="flex-1">
                       <div className="flex items-center gap-2">
                         <p className="text-sm font-medium text-foreground">{webinar.title}</p>
                         {webinar.status === "live" && (
-                          <span className="text-[10px] font-bold uppercase px-1.5 py-0.5 rounded bg-destructive/10 text-destructive">Live</span>
+                          <span className="text-[10px] font-bold uppercase px-1.5 py-0.5 rounded stream-health">Live</span>
                         )}
                       </div>
                       <p className="text-xs text-muted-foreground">{webinar.speaker} · {webinar.date} at {webinar.time}</p>
@@ -166,19 +161,18 @@ const LmsDashboard = () => {
               </div>
             </div>
 
-            {/* Recorded Webinars */}
-            <div className="bg-card rounded-xl border p-5">
+            <div className="bg-card rounded-lg border p-5">
               <h3 className="font-heading font-semibold text-foreground mb-4 flex items-center gap-2">
-                <PlayCircle className="w-4 h-4 text-primary" /> Recorded Sessions
+                <PlayCircle className="w-4 h-4 text-accent" /> Recorded Sessions
               </h3>
               <div className="space-y-3">
                 {recordedWebinars.map((rec) => (
                   <div key={rec.title} className="flex items-center gap-3 group cursor-pointer">
-                    <div className="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 transition-colors">
-                      <PlayCircle className="w-4 h-4 text-primary" />
+                    <div className="w-8 h-8 rounded-full bg-muted flex items-center justify-center group-hover:bg-accent/10 transition-colors">
+                      <PlayCircle className="w-4 h-4 text-accent" />
                     </div>
                     <div className="flex-1">
-                      <p className="text-sm font-medium text-foreground group-hover:text-primary transition-colors">{rec.title}</p>
+                      <p className="text-sm font-medium text-foreground group-hover:text-accent transition-colors">{rec.title}</p>
                       <p className="text-xs text-muted-foreground">{rec.duration} · {rec.views} views</p>
                     </div>
                     <ExternalLink className="w-3 h-3 text-muted-foreground opacity-0 group-hover:opacity-100 transition-opacity" />
