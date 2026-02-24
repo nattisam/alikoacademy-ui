@@ -13,7 +13,7 @@ import pathwayInnovation from "@/assets/pathway-innovation.jpg";
 const pathways = [
   {
     title: "Digital Health & One Health",
-    description: "Bridge healthcare and technology—master digital health tools, data-driven diagnostics, and One Health interdisciplinary approaches.",
+    description: "Bridge healthcare and technology, master digital health tools, data-driven diagnostics, and One Health interdisciplinary approaches.",
     image: pathwayHealth,
     icon: Users,
   },
@@ -70,7 +70,7 @@ const Index = () => {
                 Build <span className="text-gradient">In-Demand Skills</span> for Real Opportunities
               </h1>
               <p className="mt-6 text-lg text-muted-foreground leading-relaxed max-w-lg">
-                Aliko Academy delivers market-aligned pathways across Digital Health, One Health, STEM, and innovation—designed to move learners from training to livelihood.
+                Aliko Academy delivers market-aligned pathways across Digital Health, One Health, STEM, and innovation, designed to move learners from training to livelihood.
               </p>
               <div className="flex flex-wrap gap-4 mt-8">
                 <Button size="lg" className="gap-2">

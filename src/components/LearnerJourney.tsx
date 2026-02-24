@@ -15,7 +15,7 @@ const LearnerJourney = () => (
         Your Learner Journey
       </h2>
       <p className="text-center opacity-80 mb-12 max-w-xl mx-auto">
-        From enrollment to employment—our structured pathway guides you every step of the way.
+        From enrollment to employment, our structured pathway guides you every step of the way.
       </p>
 
       <div className="flex flex-col md:flex-row items-center justify-between gap-6 md:gap-0">

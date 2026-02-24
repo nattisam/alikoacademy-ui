@@ -9,7 +9,7 @@ const sections = [
     icon: Target,
     title: "Why We Exist",
     content:
-      "Africa's youth represent its greatest asset—yet millions lack access to quality skills training aligned with market needs. AlikoHub Academy exists to close this gap with dignity-centered, opportunity-driven pathways that transform potential into livelihood.",
+      "Africa's youth represent its greatest asset, yet millions lack access to quality skills training aligned with market needs. AlikoHub Academy exists to close this gap with dignity-centered, opportunity-driven pathways that transform potential into livelihood.",
   },
   {
     icon: Layers,
@@ -21,13 +21,13 @@ const sections = [
     icon: Star,
     title: "What Makes Us Different",
     content:
-      "Every pathway is co-designed with employers and industry experts to ensure graduates meet real hiring needs. We measure success not by enrollment, but by outcomes—75–85% of our learners transition into employment, further education, or ventures.",
+      "Every pathway is co-designed with employers and industry experts to ensure graduates meet real hiring needs. We measure success not by enrollment, but by outcomes, 75-85% of our learners transition into employment, further education, or ventures.",
   },
   {
     icon: Heart,
     title: "Commitment to Inclusion",
     content:
-      "We actively target 45% female participation across all pathways. Inclusion isn't an afterthought—it's built into our curriculum design, mentorship matching, and community programming to ensure equitable access for all learners.",
+      "We actively target 45% female participation across all pathways. Inclusion isn't an afterthought, it's built into our curriculum design, mentorship matching, and community programming to ensure equitable access for all learners.",
   },
 ];
 
@@ -48,7 +48,7 @@ const About = () => {
                 A Dignity-Centered <span className="text-gradient">Workforce Ecosystem</span>
               </h1>
               <p className="mt-6 text-lg text-muted-foreground leading-relaxed max-w-lg">
-                Aliko Academy is part of AlikoHub's resourcefulness ecosystem—connecting learning, mentorship, applied practice, and opportunity across Africa and global pathways.
+                Aliko Academy is part of AlikoHub's resourcefulness ecosystem, connecting learning, mentorship, applied practice, and opportunity across Africa and global pathways.
               </p>
               <div className="flex flex-wrap gap-4 mt-8">
                 <Button size="lg">Get a Proposal</Button>
