@@ -11,29 +11,29 @@ const differentiators = [
   {
     icon: Shield,
     title: "Employer-Aligned Design",
-    desc: "Built with labor market and industry alignment to ensure graduates meet real hiring needs.",
+    desc: "Programs are structured around real workforce demand and industry expectations.",
   },
   {
     icon: Monitor,
-    title: "Hybrid & Accessible",
-    desc: "Blended LMS and hands-on learning designed to reach learners wherever they are.",
+    title: "Hybrid & Accessible Model",
+    desc: "Blended LMS delivery combined with hands-on labs and mentorship.",
   },
   {
     icon: Briefcase,
-    title: "Career-Integrated",
-    desc: "Internships, job pipelines, and startup exposure embedded into every pathway.",
+    title: "Career-Integrated Pathways",
+    desc: "Internships, job matching, and enterprise development embedded in the learning journey.",
   },
   {
     icon: Heart,
-    title: "Dignity-Centered",
-    desc: "Inclusive design with measurable outcomes that prioritize equity and access.",
+    title: "Dignity-Centered Approach",
+    desc: "Inclusive design focused on measurable opportunity, not just enrollment.",
   },
 ];
 
 const impactMetrics = [
-  { value: "75-85%", label: "Targeted Employment Outcomes" },
-  { value: "45%", label: "Female Participation Minimum" },
-  { value: "50,000", label: "Youth Five-Year Target" },
+  { value: "75–85%", label: "Targeted Employment & Income Outcomes" },
+  { value: "45%", label: "Minimum Female Participation" },
+  { value: "Multi-Country", label: "Scalable Workforce Model" },
 ];
 
 const Index = () => {
@@ -50,7 +50,7 @@ const Index = () => {
                 Build <span className="text-gradient">In-Demand Skills</span> for Real Opportunities
               </h1>
               <p className="mt-6 text-lg text-muted-foreground leading-relaxed max-w-lg">
-                Aliko Academy delivers market-aligned pathways across Digital Health, One Health, STEM, engineering, and innovation, designed to move learners from knowledge to livelihood.
+                Aliko Academy delivers market-aligned pathways across Health, Technology, and Engineering, designed to move learners from training to sustainable livelihoods.
               </p>
               <div className="flex flex-wrap gap-4 mt-8">
                 <Button size="lg" className="gap-2">
@@ -115,11 +115,8 @@ const Index = () => {
         <div className="section-container">
           <div className="text-center mb-10">
             <h2 className="text-3xl md:text-4xl font-heading font-bold">
-              Measurable Impact
+              Designed for Measurable Outcomes
             </h2>
-            <p className="mt-3 opacity-80 max-w-xl mx-auto">
-              We hold ourselves accountable to outcomes that matter.
-            </p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
             {impactMetrics.map((m) => (

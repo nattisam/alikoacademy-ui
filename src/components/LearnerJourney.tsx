@@ -16,7 +16,7 @@ const LearnerJourney = () => (
         From Learning to Livelihood
       </h2>
       <p className="text-center opacity-80 mb-12 max-w-xl mx-auto">
-        A structured pathway that guides you from enrollment to employment and beyond.
+        Every learner progresses through structured certification, applied practice, mentorship, and career or enterprise pathways designed for real-world impact.
       </p>
 
       <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6">
